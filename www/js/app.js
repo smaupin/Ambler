@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('ambler', ['ionic', 'ambler.controllers'])
+angular.module('ambler', ['ionic', 'ngCordova', 'ambler.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -21,15 +21,15 @@ angular.module('ambler', ['ionic', 'ambler.controllers'])
       StatusBar.styleDefault();
     }
   });
-})
+}) //closes .run
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-  .state('app', {
+  .state('map', {
     url: '/',
-    templateUrl: 'templates/authorization.html',
-    controller: 'AuthCtrl'
+    templateUrl: 'templates/map.html',
+    controller: 'MapCtrl'
   })
 
   // .state('app', {
@@ -48,35 +48,5 @@ angular.module('ambler', ['ionic', 'ambler.controllers'])
   //   }
   // })
 
-  // .state('app.browse', {
-  //   url: '/browse',
-  //   views: {
-  //     'menuContent': {
-  //       templateUrl: 'templates/browse.html'
-  //     }
-  //   }
-  // })
-
-  // .state('app.playlists', {
-  //   url: '/playlists',
-  //   views: {
-  //     'menuContent': {
-  //       templateUrl: 'templates/playlists.html',
-  //       controller: 'PlaylistsCtrl'
-  //     }
-  //   }
-  // })
-
-  // .state('app.single', {
-  //   url: '/playlists/:playlistId',
-  //   views: {
-  //     'menuContent': {
-  //       templateUrl: 'templates/playlist.html',
-  //       controller: 'PlaylistCtrl'
-  //     }
-  //   }
-  // });
-
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/');
-});
+  $urlRouterProvider.otherwise('/'); // if none of the above states are matched, use this as the fallback
+}); //closes .config
