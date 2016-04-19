@@ -4,7 +4,8 @@ angular.module('ambler.controllers', [])
 	var options = {timeout: 10000, enableHighAccuracy: true};
 	 
   $cordovaGeolocation.getCurrentPosition(options).then(function(position){
- 
+    
+    //THIS SETS LAT/LONG GEOLOCATION
     var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
  
     var mapOptions = {
@@ -13,9 +14,10 @@ angular.module('ambler.controllers', [])
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
  
+    //INPUTS MAP WITH MAP OPTIONS INTO DIV.ID MAP
     $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-    //Wait until the map is loaded
+    //WAIT UNTIL MAP IS LOADED
     google.maps.event.addListenerOnce($scope.map, 'idle', function(){
      
       var marker = new google.maps.Marker({
@@ -33,10 +35,12 @@ angular.module('ambler.controllers', [])
       });
 
     });
+
+
  
   }, function(error){
     console.log("Could not get location");
   });
 
 
-})
+});
