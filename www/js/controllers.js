@@ -1,23 +1,33 @@
 angular.module('ambler.controllers', [])  
 
 .controller('MapCtrl', function($scope, $state) { //$cordovaGeolocation
+  var mapOptions,
+      userPin,
+      userLoc;
 
   //GEOLOCATION
   navigator.geolocation.getCurrentPosition(function(position) {
-    var userLoc = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    userLoc = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    mapOptions = {
+      zoom:14,
+      center: userLoc,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
 
-    var userPin = new google.maps.Marker({
-      position: userLoc,
-      map: $scope.map,
-      animation: google.maps.Animation.DROP,
-      infoWindow: new google.maps.InfoWindow({
-        content: "That's Me!"
-      }),
-    });
+    initMap();
 
-    google.maps.event.addListener(userPin, 'click', function () {
-      userPin.infoWindow.open($scope.map, userPin);
-    });     
+    // userPin = new google.maps.Marker({
+    //   position: userLoc,
+    //   map: $scope.map,
+    //   animation: google.maps.Animation.DROP,
+    //   infoWindow: new google.maps.InfoWindow({
+    //     content: "That's Me!"
+    //   }),
+    // });
+
+    // google.maps.event.addListener(userPin, 'click', function () {
+    //   userPin.infoWindow.open($scope.map, userPin);
+    // });     
   });
 
   var directionsDisplay,
@@ -27,14 +37,19 @@ angular.module('ambler.controllers', [])
 
   function initMap() {
     directionsDisplay = new google.maps.DirectionsRenderer();
-
-    var mapOptions = {
-      zoom:14,
-      center: GA, //user location
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
+    // var GA = new google.maps.LatLng(37.790899, -122.401541);
+    mapOptions = mapOptions;
 
     $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+    userPin = new google.maps.Marker({
+      position: userLoc,
+      map: $scope.map,
+      animation: google.maps.Animation.DROP,
+      infoWindow: new google.maps.InfoWindow({
+        content: "That's Me!"
+      }),
+    });
     
     var ferryPin = new google.maps.Marker({
       position: new google.maps.LatLng(37.795800, -122.393459),
@@ -53,6 +68,10 @@ angular.module('ambler.controllers', [])
         content: "Boba Guys"
       }),
     });
+
+    google.maps.event.addListener(userPin, 'click', function () {
+      userPin.infoWindow.open($scope.map, userPin);
+    }); 
 
     google.maps.event.addListener(ferryPin, 'click', function () {
       ferryPin.infoWindow.open($scope.map, ferryPin);
@@ -82,15 +101,45 @@ angular.module('ambler.controllers', [])
   //   });
   // }
 
-  initMap();
 
-});
-
+  });
 
 
+  // if ("geolocation" in navigator) {
+  //   /* geolocation is available */
+  //   console.log("geolocation DOES works");
+  // } else {
+  //   /* geolocation IS NOT available */
+  //   console.log("geolocation DOES NOT work");
+  // }
+
+  // if (navigator.geolocation) {
+  //   navigator.geolocation.getCurrentPosition(function (position) {
+  //     initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+  //     map.setCenter(initialLocation);
+  //     map.setZoom(14);
+  //     var marker = new google.maps.Marker({
+  //           // icon: {url :'/assets/youarehere150.png',
+  //           // height:10},
+  //       // // icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FFBB00',
+  //       position: initialLocation,
+  //       map: $scope.map
+  //     });
+  //     var infowindow = new google.maps.InfoWindow({
+  //       content: "You are here"
+  //     });
+      
+  //     marker.addListener('click', function() {
+  //       infowindow.open(map, marker);
+  //     });
+  //     });  
+  // }
 
 
 
+
+
+//////////////// ITERATION 1 CODE (W/ CORDOVA) //////////////////
 
 
 
@@ -168,5 +217,5 @@ angular.module('ambler.controllers', [])
 
   //   //ERROR IF USER DOES NOT ALLOW GEOLOCATION
   // }, function(error){
-  //   console.log("Could n get location");
+  //   console.log("Could not get location");
   // });
