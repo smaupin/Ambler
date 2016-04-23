@@ -1,46 +1,33 @@
 angular.module('ambler.controllers', [])  
 
 .controller('MapCtrl', function($scope, $state) { //$cordovaGeolocation
+
+  var directionsDisplay,
+      directionsService = new google.maps.DirectionsService(),
+      map;
   var mapOptions,
       userPin,
+      wayPoints = [],
       userLoc;
 
   //GEOLOCATION
   navigator.geolocation.getCurrentPosition(function(position) {
     userLoc = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     mapOptions = {
-      zoom:14,
+      zoom:13,
       center: userLoc,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
-    initMap();
-
-    // userPin = new google.maps.Marker({
-    //   position: userLoc,
-    //   map: $scope.map,
-    //   animation: google.maps.Animation.DROP,
-    //   infoWindow: new google.maps.InfoWindow({
-    //     content: "That's Me!"
-    //   }),
-    // });
-
-    // google.maps.event.addListener(userPin, 'click', function () {
-    //   userPin.infoWindow.open($scope.map, userPin);
-    // });     
+    initMap();    
   });
 
-  var directionsDisplay,
-      directionsService = new google.maps.DirectionsService(),
-      map,
-      infoWindow;
-
   function initMap() {
-    directionsDisplay = new google.maps.DirectionsRenderer();
-    // var GA = new google.maps.LatLng(37.790899, -122.401541);
     mapOptions = mapOptions;
-
     $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    directionsDisplay = new google.maps.DirectionsRenderer({map: $scope.map});
+    var stepDisplay = new google.maps.InfoWindow();
+
 
     userPin = new google.maps.Marker({
       position: userLoc,
@@ -81,28 +68,37 @@ angular.module('ambler.controllers', [])
       bobaPin.infoWindow.open($scope.map, bobaPin);
     });
 
-    directionsDisplay.setMap(map);
+    directionsDisplay.setMap($scope.map);
+
+    calcAndDisplayRoute(directionsDisplay, directionsService, wayPoints, map);
   }
 
-  // function calcRoute() {
-  //   var start = document.getElementById("start").value, //geolocation or search field
-  //       end = document.getElementById("end").value; //last point in wayPoints array
-  //       wayPoints = [];
+  function calcAndDisplayRoute(directionsDisplay, directionsService, wayPoints, map) {
+    var start = userLoc, //ideally geolocation or search field
+        end = new google.maps.LatLng(37.795800, -122.393459); //ideally last point in wayPoints array
+        wayPoints = [];
 
-  //   var request = {
-  //     origin:start,
-  //     destination:end,
-  //     travelMode: google.maps.TravelMode.DRIVING
-  //   };
-  //   directionsService.route(request, function(result, status) {
-  //     if (status == google.maps.DirectionsStatus.OK) {
-  //       directionsDisplay.setDirections(result);
-  //     }
-  //   });
-  // }
+    var request = {
+      origin: start,
+      destination: end,
+      waypoints: wayPoints,
+      optimizeWaypoints: true,
+      travelMode: google.maps.TravelMode.WALKING
+    };
+
+    directionsService.route(request, function(response, status) {
+      if (status === google.maps.DirectionsStatus.OK) {
+        directionsDisplay.setDirections(response);
+        // console.log("direction route is good to go");
+      } else {
+        window.alert('Directions request failed due to ' + status);
+        // console.log("cannot display route");
+      }
+    });
+  }
 
 
-  });
+}); //MapCtrl
 
 
   // if ("geolocation" in navigator) {
