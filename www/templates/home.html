@@ -5,9 +5,9 @@
 		<div>
 
 
-			<form ng-submit="submit()" ng-controller="ExampleController">
+			<form ng-submit="submit(address)">
         Enter Start Address:
-        <input type="text" ng-model="text" name="text" placeholder="type address"/>
+        <input type="text" ng-model="address" placeholder="type address"/> <!--  name="text" -->
         <input type="submit" id="homeStartAddy" value="Start Here" />
       </form>
 		</div>
@@ -16,8 +16,8 @@
     <p>
       - OR -
     </p>
-    <form ng-submit="submit()" ng-controller="ExampleController">
+    <!-- <form ng-submit="submit()" ng-controller="HomeCtrl">
       <input type="submit" id="homeCurrentLoc" value="Use Current Location" />
-    </form>
+    </form> -->
   </ion-content>
 </ion-view>

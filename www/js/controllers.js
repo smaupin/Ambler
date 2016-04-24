@@ -1,4 +1,4 @@
-angular.module('ambler.controllers', [])  
+angular.module('ambler.controllers', [])
 
 .controller('MapCtrl', function($scope, $state) { //$cordovaGeolocation
 
@@ -19,7 +19,7 @@ angular.module('ambler.controllers', [])
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
-    initMap();    
+    initMap();
   });
 
   function initMap() {
@@ -37,7 +37,7 @@ angular.module('ambler.controllers', [])
     //     content: "That's Me!"
     //   }),
     // });
-    
+
     // var ferryPin = new google.maps.Marker({
     //   position: new google.maps.LatLng(37.795800, -122.393459),
     //   map: $scope.map,
@@ -58,7 +58,7 @@ angular.module('ambler.controllers', [])
 
     // google.maps.event.addListener(userPin, 'click', function () {
     //   userPin.infoWindow.open($scope.map, userPin);
-    // }); 
+    // });
 
     // google.maps.event.addListener(ferryPin, 'click', function () {
     //   ferryPin.infoWindow.open($scope.map, ferryPin);
@@ -100,19 +100,48 @@ angular.module('ambler.controllers', [])
   }
 
 
-}); //MapCtrl
+}) //MapCtrl
 
+.controller('HomeCtrl', ['$scope', function($scope) {
+  $scope.submit = function(address) {
+    // console.log("something to see")
+    console.log(address)
+  }
+}]); // homeCtrl
 
+// BELOW IS THE EXAMPLE FROM THE ANGULAR DOCS
+    // .controller('ExampleController', ['$scope', function($scope) {
+    //   $scope.list = [];
+    //   $scope.text = 'hello';
+    //   $scope.submit = function() {
+    //     if ($scope.text) {
+    //       $scope.list.push(this.text);
+    //       $scope.text = '';
+    //     }
+    //   };
+    // }]);
+
+// .controller('HomeCtrl', ['$scope', '$state', function($scope, $state) {
+//       // $scope.list = [];
+//       // $scope.text = 'hello';
+//       $scope.submit = function(address) {
+//         console.log("homectrl works")
+//         // if ($scope.text) {
+//           // $scope.list.push(this.text);
+//           // $scope.text = '';
+//         // }
+//       };
+//     }]); // homeCtrl
 //////////////// ITERATION 1 CODE (W/ CORDOVA) //////////////////
 
 
 
 
   // var options = {enableHighAccuracy: true}; //timeout: 10000,
-   
+
   //GEOLOCATION
   // $cordovaGeolocation.getCurrentPosition(options).then(function(position){
-    
+
     //LAT/LONG FOR GEOLOCATION & WOTHER PINS
   //   var userLoc = new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
   //       ferryLoc = new google.maps.LatLng(37.795800, -122.393459),
@@ -124,19 +153,19 @@ angular.module('ambler.controllers', [])
   //     zoom: 14,
   //     mapTypeId: google.maps.MapTypeId.ROADMAP
   //   };
- 
+
   //   //INJECTS MAP WITH "mapOtions" SETTINGS INTO #ID DIV IN HTML
   //   $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
   //   google.maps.event.addListenerOnce($scope.map, 'idle', function(){
-      
+
   //     //DROPS PIN ON CURRENT LOCATION (GEOLOCATION)
   //     var userPin = new google.maps.Marker({
   //       map: $scope.map,
   //       animation: google.maps.Animation.DROP,
   //       position: userLoc
-  //     });      
-     
+  //     });
+
   //     var userWindow = new google.maps.InfoWindow({
   //       content: "Here I am!"
   //     });
@@ -161,7 +190,7 @@ angular.module('ambler.controllers', [])
   //     var bobaWindow = new google.maps.InfoWindow({
   //       content: "Boba Guys"
   //     });
-     
+
   //     //CLICK LISTENERS FOR PIN INFO WINDOWS
   //     google.maps.event.addListener(userPin, 'click', function () {
   //       userWindow.open($scope.map, userPin);
