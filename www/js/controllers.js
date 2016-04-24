@@ -29,44 +29,44 @@ angular.module('ambler.controllers', [])
     var stepDisplay = new google.maps.InfoWindow();
 
 
-    userPin = new google.maps.Marker({
-      position: userLoc,
-      map: $scope.map,
-      animation: google.maps.Animation.DROP,
-      infoWindow: new google.maps.InfoWindow({
-        content: "That's Me!"
-      }),
-    });
+    // userPin = new google.maps.Marker({
+    //   position: userLoc,
+    //   map: $scope.map,
+    //   animation: google.maps.Animation.DROP,
+    //   infoWindow: new google.maps.InfoWindow({
+    //     content: "That's Me!"
+    //   }),
+    // });
     
-    var ferryPin = new google.maps.Marker({
-      position: new google.maps.LatLng(37.795800, -122.393459),
-      map: $scope.map,
-      animation: google.maps.Animation.DROP,
-      infoWindow: new google.maps.InfoWindow({
-        content: "Ferry Building"
-      }),
-    });
+    // var ferryPin = new google.maps.Marker({
+    //   position: new google.maps.LatLng(37.795800, -122.393459),
+    //   map: $scope.map,
+    //   animation: google.maps.Animation.DROP,
+    //   infoWindow: new google.maps.InfoWindow({
+    //     content: "Ferry Building"
+    //   }),
+    // });
 
-    var bobaPin = new google.maps.Marker({
-      position: new google.maps.LatLng(37.789987, -122.407287),
-      map: $scope.map,
-      animation: google.maps.Animation.DROP,
-      infoWindow: new google.maps.InfoWindow({
-        content: "Boba Guys"
-      }),
-    });
+    // var bobaPin = new google.maps.Marker({
+    //   position: new google.maps.LatLng(37.789987, -122.407287),
+    //   map: $scope.map,
+    //   animation: google.maps.Animation.DROP,
+    //   infoWindow: new google.maps.InfoWindow({
+    //     content: "Boba Guys"
+    //   }),
+    // });
 
-    google.maps.event.addListener(userPin, 'click', function () {
-      userPin.infoWindow.open($scope.map, userPin);
-    }); 
+    // google.maps.event.addListener(userPin, 'click', function () {
+    //   userPin.infoWindow.open($scope.map, userPin);
+    // }); 
 
-    google.maps.event.addListener(ferryPin, 'click', function () {
-      ferryPin.infoWindow.open($scope.map, ferryPin);
-    });
+    // google.maps.event.addListener(ferryPin, 'click', function () {
+    //   ferryPin.infoWindow.open($scope.map, ferryPin);
+    // });
 
-    google.maps.event.addListener(bobaPin, 'click', function () {
-      bobaPin.infoWindow.open($scope.map, bobaPin);
-    });
+    // google.maps.event.addListener(bobaPin, 'click', function () {
+    //   bobaPin.infoWindow.open($scope.map, bobaPin);
+    // });
 
     directionsDisplay.setMap($scope.map);
 
@@ -76,7 +76,9 @@ angular.module('ambler.controllers', [])
   function calcAndDisplayRoute(directionsDisplay, directionsService, wayPoints, map) {
     var start = userLoc, //ideally geolocation or search field
         end = new google.maps.LatLng(37.795800, -122.393459); //ideally last point in wayPoints array
-        wayPoints = [];
+        wayPoints = [{location: {"lat": 37.796997, "lng": -122.400033}, stopover: true},
+                     {location: {"lat": 37.794097, "lng": -122.404925}, stopover: true},
+                     {location: {"lat": 37.794920, "lng": -122.397313}, stopover: true}];
 
     var request = {
       origin: start,
