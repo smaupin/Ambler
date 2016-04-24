@@ -76,7 +76,9 @@ angular.module('ambler.controllers', [])
   function calcAndDisplayRoute(directionsDisplay, directionsService, wayPoints, map) {
     var start = userLoc, //ideally geolocation or search field
         end = new google.maps.LatLng(37.795800, -122.393459); //ideally last point in wayPoints array
-        wayPoints = [];
+        wayPoints = [{location: {"lat": 37.796997, "lng": -122.400033}, stopover: true},
+                     {location: {"lat": 37.794097, "lng": -122.404925}, stopover: true},
+                     {location: {"lat": 37.794920, "lng": -122.397313}, stopover: true}];
 
     var request = {
       origin: start,
