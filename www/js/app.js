@@ -32,6 +32,12 @@ angular.module('ambler', ['ionic', 'ambler.controllers']) //'ngCordova'
     controller: 'MapCtrl'
   })
 
+  .state('home', {
+    url: '/home',
+    templateUrl: 'templates/home.html',
+    controller: 'HomeCtrl'
+  })
+
   // .state('app', {
   //   url: '/app',
   //   abstract: true,
