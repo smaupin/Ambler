@@ -101,40 +101,6 @@ angular.module('ambler.controllers', [])
 }); //MapCtrl
 
 
-  // if ("geolocation" in navigator) {
-  //   /* geolocation is available */
-  //   console.log("geolocation DOES works");
-  // } else {
-  //   /* geolocation IS NOT available */
-  //   console.log("geolocation DOES NOT work");
-  // }
-
-  // if (navigator.geolocation) {
-  //   navigator.geolocation.getCurrentPosition(function (position) {
-  //     initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-  //     map.setCenter(initialLocation);
-  //     map.setZoom(14);
-  //     var marker = new google.maps.Marker({
-  //           // icon: {url :'/assets/youarehere150.png',
-  //           // height:10},
-  //       // // icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FFBB00',
-  //       position: initialLocation,
-  //       map: $scope.map
-  //     });
-  //     var infowindow = new google.maps.InfoWindow({
-  //       content: "You are here"
-  //     });
-      
-  //     marker.addListener('click', function() {
-  //       infowindow.open(map, marker);
-  //     });
-  //     });  
-  // }
-
-
-
-
-
 //////////////// ITERATION 1 CODE (W/ CORDOVA) //////////////////
 
 
