@@ -103,10 +103,22 @@ angular.module('ambler.controllers', [])
 }) //MapCtrl
 
 .controller('HomeCtrl', ['$scope', function($scope) {
-  $scope.submit = function(address) {
-    // console.log("something to see")
-    console.log(address)
-  }
+  var input = document.getElementById('address');
+  // var options = {
+  //   bounds: defaultBounds,
+  //   types: ['establishment']
+  // };
+
+  autocomplete = new google.maps.places.Autocomplete(input);
+
+  // $scope.submit = function(address) {
+  //   if (address) {
+  //     // use address
+  //     console.log(address)
+  //   }
+  //   else {
+  //   }
+  // }
 }]); // homeCtrl
 
 // BELOW IS THE EXAMPLE FROM THE ANGULAR DOCS
@@ -132,10 +144,15 @@ angular.module('ambler.controllers', [])
 //         // }
 //       };
 //     }]); // homeCtrl
+
+
+
+
+
+
+
+
 //////////////// ITERATION 1 CODE (W/ CORDOVA) //////////////////
-
-
-
 
   // var options = {enableHighAccuracy: true}; //timeout: 10000,
 
