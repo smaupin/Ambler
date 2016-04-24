@@ -103,22 +103,41 @@ angular.module('ambler.controllers', [])
 }) //MapCtrl
 
 .controller('HomeCtrl', ['$scope', function($scope) {
+  // input and autocomplete used to search address in google maps
   var input = document.getElementById('address');
   // var options = {
   //   bounds: defaultBounds,
   //   types: ['establishment']
   // };
 
-  autocomplete = new google.maps.places.Autocomplete(input);
+  startAdd = new google.maps.places.Autocomplete(input);
 
-  // $scope.submit = function(address) {
-  //   if (address) {
-  //     // use address
-  //     console.log(address)
-  //   }
-  //   else {
-  //   }
-  // }
+  $scope.submit = function() {
+    if (startAdd) {
+      // use address
+      // console.log(new google.maps.places.Autocomplete(input));
+      // console.log(startAdd);
+      // console.log(startAdd.gm_bindings_.types["7"].Rd["R"]);
+      console.log(startAdd.gm_bindings_.types["7"].Rd); // then place: - formatted_address
+      // console.log(typeof startAdd.gm_bindings_.types["7"].Rd);
+      // console.log(startAdd.gm_bindings_.types["7"].Rd['$']);
+      // console.log(startAdd.gm_bindings_.types["7"].Rd['R']);
+      // console.log(startAdd.gm_bindings_.types["7"].Rd['T']);***
+      // console.log(startAdd.gm_bindings_.types["7"].Rd['U']);
+      // console.log(startAdd.gm_bindings_.types["7"].Rd['V']);
+      // console.log(startAdd.gm_bindings_.types["7"].Rd['gm_bindings_']);
+      // console.log(startAdd.gm_bindings_.types["7"].Rd['formattedPrediction']);
+      // console.log(startAdd.gm_bindings_.types["7"].Rd['gm_bindings_']);
+      // console.log(startAdd.gm_bindings_.types["7"].Rd.['place']);***
+      // when the dot/bracket notation above gives us 'formatted address' save it as a variable
+      startPoint = "225 Bush St, San Francisco, CA 94104, USA" // for the time being, this is hardcoded, instead of the code from the console log.
+      // console.log(startPoint);
+
+    }
+    else {
+      console.log("please input address")
+    }
+  }
 }]); // homeCtrl
 
 // BELOW IS THE EXAMPLE FROM THE ANGULAR DOCS
