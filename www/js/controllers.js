@@ -139,7 +139,15 @@ angular.module('ambler.controllers', [])
       console.log("please input address")
     }
   }
-}]); // homeCtrl
+}]) // homeCtrl
+
+.controller('SplashCtrl', function($scope, $state) {
+
+  $scope.submit = function() {
+      console.log("SplashCtrl is working");
+      // need a function to transfer page to home.html
+  }
+}); // SplashCtrl
 
 // BELOW IS THE EXAMPLE FROM THE ANGULAR DOCS
     // .controller('ExampleController', ['$scope', function($scope) {

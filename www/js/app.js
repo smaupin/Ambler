@@ -38,6 +38,12 @@ angular.module('ambler', ['ionic', 'ambler.controllers']) //'ngCordova'
     controller: 'HomeCtrl'
   })
 
+  .state('splash', {
+    url: '/splash',
+    templateUrl: 'templates/splash.html',
+    controller: 'SplashCtrl'
+  })
+
   // .state('app', {
   //   url: '/app',
   //   abstract: true,
