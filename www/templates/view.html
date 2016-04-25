@@ -1,11 +1,11 @@
 <ion-view ng-controller="ViewCtrl">
   <ion-content>
     <!-- <div id="map" data-tap-disabled="true"></div> -->
-    <div>READ MORE PAGE</div>
+    <div>LIST VIEW PAGE</div><br>
     <div>
     	<ul>
     		<li ng-repeat="location in locations">
-    			<div>{{ location.name }}</div>
+    			<div>{{ location.id }} | {{ location.name }}</div>
     			<div>{{ location.address }}</div>
     			<hr>
     		</li>
