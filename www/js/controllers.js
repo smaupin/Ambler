@@ -146,6 +146,7 @@ angular.module('ambler.controllers', [])
   $scope.submit = function() {
       console.log("SplashCtrl is working");
       // need a function to transfer page to home.html
+      $state.go('home');
   }
 }); // SplashCtrl
 
