@@ -1,6 +1,6 @@
 angular.module('ambler.controllers', [])
 
-.controller('MapCtrl', function($scope, $state) { //$cordovaGeolocation
+.controller('MapCtrl', function($scope, $state) { //$cordovaGeolocation  
 
   var directionsDisplay,
       directionsService = new google.maps.DirectionsService(),
@@ -130,14 +130,14 @@ angular.module('ambler.controllers', [])
       // console.log(startAdd.gm_bindings_.types["7"].Rd['gm_bindings_']);
       // console.log(startAdd.gm_bindings_.types["7"].Rd.['place']);***
       // when the dot/bracket notation above gives us 'formatted address' save it as a variable
-      startPoint = "225 Bush St, San Francisco, CA 94104, USA" // for the time being, this is hardcoded, instead of the code from the console log.
+      startPoint = "225 Bush St, San Francisco, CA 94104, USA"; // for the time being, this is hardcoded, instead of the code from the console log.
       // console.log(startPoint);
 
     }
     else {
-      console.log("please input address")
+      console.log("please input address");
     }
-  }
+  };
 }]); // homeCtrl
 
 // BELOW IS THE EXAMPLE FROM THE ANGULAR DOCS
