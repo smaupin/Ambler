@@ -38,11 +38,23 @@ angular.module('ambler', ['ionic', 'ambler.controllers']) //'ngCordova'
     controller: 'HomeCtrl'
   })
 
+  .state('view', {
+    url: '/view',
+    templateUrl: 'templates/view.html',
+    controller: 'ViewCtrl'
+  })
+
+  .state('about', {
+    url: '/about',
+    templateUrl: 'templates/about.html',
+    // controller: 'HomeCtrl'
+  })
+
   .state('splash', {
     url: '/splash',
     templateUrl: 'templates/splash.html',
     controller: 'SplashCtrl'
-  })
+  });
 
   // .state('app', {
   //   url: '/app',
