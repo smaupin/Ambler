@@ -1,8 +1,6 @@
-angular.module('ambler.controllers', [])
+angular.module('ambler.controllers')
 
 .controller('ViewCtrl', function($scope) {
-
-	// console.log("let's load some locations!");
 
 	$scope.locations = [{ id: 01, name: "500 Capp Street", address: "500 Capp St, San Francisco, CA 94110",
 							lat: " ", lng: " ", category: "art", description: " ",
@@ -163,7 +161,5 @@ angular.module('ambler.controllers', [])
 							imgTwo: " ",
 							imgThree: " ",
 							beauty: 7, art: 0, architecture: 3, vista: 10, nature: 10, open_space: 9, daytime: 10, night: 2, explore: 0 }];
-
-	console.log($scope.locations);
 
 });
