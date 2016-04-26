@@ -330,16 +330,18 @@ angular.module('ambler.controllers')
 	array_of_spots = [];
 	i = 0;
 	$scope.locations.forEach(function(location) {
-		console.log("address found " + $scope.locations[i].address + " i = " + (i));
+		// console.log("address found " + $scope.locations[i].address + " i = " + (i));
 		array_of_spots.push($scope.locations[i].address);
-		console.log(location.address);
+		// console.log(location.address);
 		i = i+1;
 	});
 	console.log(array_of_spots);
 
-
-
-	getCoordinates(array_of_spots);
+// for (j=0; j<array_of_spots.length; j+=1) {
+	getCoordinates(array_of_spots[19], function(coordinates) {
+		console.log(coordinates);
+	});
+// }
 
 	function getCoordinates (address, callback) {
 		// for (i in address) {
