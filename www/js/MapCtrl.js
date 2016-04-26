@@ -1,11 +1,9 @@
-angular.module('ambler.controllers', [])
+  angular.module('ambler.controllers', [])
 
 .controller('SplashCtrl', function($scope, $state) {
-
   $scope.start = function () {
     $state.go('home');
   };
-
 })// SplashCtrl
 
 .controller('HomeCtrl', ['$scope', function($scope) {
@@ -46,7 +44,8 @@ angular.module('ambler.controllers', [])
   };
 }])// HomeCtrl
 
-.controller('MapCtrl', function($scope, $state) { //$cordovaGeolocation  
+
+.controller('MapCtrl', function($scope, $state) { //$cordovaGeolocation
 
   var directionsDisplay,
       directionsService = new google.maps.DirectionsService(),
@@ -54,10 +53,11 @@ angular.module('ambler.controllers', [])
   var mapOptions,
       userPin,
       wayPoints = [],
-      userLoc;
+      userLoc,
+      geocoder = new google.maps.Geocoder();
 
-  //GEOLOCATION
-  navigator.geolocation.getCurrentPosition(function (position) {
+  //GEOLOCATION -- init map with geolocation as center of map
+  navigator.geolocation.getCurrentPosition(function(position) {
     userLoc = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     mapOptions = {
       zoom:13,
@@ -73,12 +73,92 @@ angular.module('ambler.controllers', [])
     initMap();
   });
 
-  function initMap() {
-    mapOptions = mapOptions;
-    $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
-    directionsDisplay = new google.maps.DirectionsRenderer({map: $scope.map});
-    var stepDisplay = new google.maps.InfoWindow();
+  // // init map with a given address as center location.
+  // var address = "1011 Stratford, Olathe, KS"
+  //
+  // getCoordinates(address, function(coords) {
+  //   var mapOptions = {
+  //     zoom: 16,
+  //     center: new google.maps.LatLng(coords[0], coords[1]),
+  //     mapTypeId: google.maps.MapTypeId.ROADMAP
+  //   };
+  //
+  //   initMap();
+  // })
 
+  // GEOCODING
+  // geocoder = new google.maps.Geocoder();
+
+  // function getCoordinates (address, callback) {
+  //   var coordinates;
+  //   geocoder.geocode({ address: address}, function (results, status) {
+  //     coords_obj = results[0].geometry.location;
+  //     coordinates = [coords_obj.lat(), coords_obj.lng()];
+  //     callback(coordinates);
+  //   })
+  // } // close getCoordinates function
+
+  window.getCoordinates = function (address, callback) {
+    var coordinates;
+    geocoder.geocode({ address: address}, function (results, status) {
+      coords_obj = results[0].geometry.location;
+      coordinates = [coords_obj.lat(), coords_obj.lng()];
+      callback(coordinates);
+      // coords_obj = results;
+      // callback(coords_obj);
+      // callback(results[0].formatted_address);
+    });
+  };
+  // function initMap() {
+  //   mapOptions = mapOptions;
+  //   $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+  //   directionsDisplay = new google.maps.DirectionsRenderer({map: $scope.map});
+  //   var stepDisplay = new google.maps.InfoWindow();
+
+    function initMap() {
+      mapOptions = mapOptions;
+      $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+      directionsDisplay = new google.maps.DirectionsRenderer({map: $scope.map});
+      var stepDisplay = new google.maps.InfoWindow();
+
+    // userPin = new google.maps.Marker({
+    //   position: userLoc,
+    //   map: $scope.map,
+    //   animation: google.maps.Animation.DROP,
+    //   infoWindow: new google.maps.InfoWindow({
+    //     content: "That's Me!"
+    //   }),
+    // });
+
+    // var ferryPin = new google.maps.Marker({
+    //   position: new google.maps.LatLng(37.795800, -122.393459),
+    //   map: $scope.map,
+    //   animation: google.maps.Animation.DROP,
+    //   infoWindow: new google.maps.InfoWindow({
+    //     content: "Ferry Building"
+    //   }),
+    // });
+
+    // var bobaPin = new google.maps.Marker({
+    //   position: new google.maps.LatLng(37.789987, -122.407287),
+    //   map: $scope.map,
+    //   animation: google.maps.Animation.DROP,
+    //   infoWindow: new google.maps.InfoWindow({
+    //     content: "Boba Guys"
+    //   }),
+    // });
+
+    // google.maps.event.addListener(userPin, 'click', function () {
+    //   userPin.infoWindow.open($scope.map, userPin);
+    // });
+
+    // google.maps.event.addListener(ferryPin, 'click', function () {
+    //   ferryPin.infoWindow.open($scope.map, ferryPin);
+    // });
+
+    // google.maps.event.addListener(bobaPin, 'click', function () {
+    //   bobaPin.infoWindow.open($scope.map, bobaPin);
+    // });
     directionsDisplay.setMap($scope.map);
 
     calcAndDisplayRoute(directionsDisplay, directionsService, wayPoints, map);
