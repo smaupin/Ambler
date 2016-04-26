@@ -2,11 +2,11 @@ angular.module('ambler.controllers')
 
 .controller('ViewCtrl', function($scope) {
 
-	geocoder = new google.maps.Geocoder();
+	// geocoder = new google.maps.Geocoder();
 
 	$scope.locations = [
 											{ id: 01, name: "500 Capp Street", address: "500 Capp St, San Francisco, CA 94110",
-												lat: " ", lng: " ", category: "art", description: " ",
+												lat: 37.7585649, lng: -122.41818139999998, category: "art", description: " ",
 												picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c135.0.810.810/12825837_842753145853729_1894560635_n.jpg?ig_cache_key=MTIwMjM3NDA3NzY4NzQzOTY4Ng%3D%3D.2.c",
 												imgOne: " ",
 												imgTwo: " ",
@@ -15,7 +15,7 @@ angular.module('ambler.controllers')
 											},
 
 											{ id: 02, name: "Alamo Square", address: "Steiner St, San Francisco, CA 94117",
-												lat: " ", lng: " ", category: "architecture", description: " ",
+												lat: 37.7737676, lng: -122.43246390000002, category: "architecture", description: " ",
 												picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c0.134.1080.1080/12338437_1706995792873260_148444126_n.jpg?ig_cache_key=MTIwODQwNTU5MzczNjA1MDk1MA%3D%3D.2.c",
 												imgOne: " ",
 												imgTwo: " ",
@@ -24,7 +24,7 @@ angular.module('ambler.controllers')
 											},
 
 											{ id: 03, name: "Alemany Farm", address: "700 Alemany Blvd, San Francisco, CA 94110",
-												lat: " ", lng: " ", category: "vista", description: " ",
+												lat: 37.7338589, lng: -122.4126326, category: "vista", description: " ",
 												picURL: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12346083_184686028545052_1969116424_n.jpg?ig_cache_key=MTEzODYyMDcxNjgzOTg0MDE1Ng%3D%3D.2",
 												imgOne: " ",
 												imgTwo: " ",
@@ -33,7 +33,7 @@ angular.module('ambler.controllers')
 											},
 
 											{ id: 04, name: "Balmy Alley", address: "50 Balmy St., San Francisco, CA",
-												lat: " ", lng: " ", category: "nature", description: " ",
+												lat: 37.75181, lng: -122.41243359999999, category: "nature", description: " ",
 												picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/12751201_1052975434745536_1247614223_n.jpg?ig_cache_key=MTIwODE0NTAwMzU4MDk3NzM1Mw%3D%3D.2",
 												imgOne: " ",
 												imgTwo: " ",
@@ -42,7 +42,7 @@ angular.module('ambler.controllers')
 											}, 
 
 											{ id: 05, name: "Bernal Heights Park", address: "10 Bernal Heights Blvd, San Francisco, CA 94110",
-												lat: " ", lng: " ", category: "art", description: " ",
+												lat: 37.743118, lng: -122.4151976, category: "art", description: " ",
 												picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12826218_1689015558053290_1136123522_n.jpg?ig_cache_key=MTIwOTExNjkyNDg1OTU3NDI5Nw%3D%3D.2",
 												imgOne: " ",
 												imgTwo: " ",
@@ -51,7 +51,7 @@ angular.module('ambler.controllers')
 											},
 
 											{ id: 06, name: "Buena Vista Park", address: "Buena Vista & Haight, San Francisco, CA 94117",
-												lat: " ", lng: " ", category: "open space", description: " ",
+												lat: 37.76773, lng: -122.44020999999998, category: "open space", description: " ",
 												picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/10387930_205652173127671_1201375180_n.jpg?ig_cache_key=MTIwNTkzMDgzNzk2NTM4NDg0NQ%3D%3D.2",
 												imgOne: " ",
 												imgTwo: " ",
@@ -60,7 +60,7 @@ angular.module('ambler.controllers')
 											},
 
 											{ id: 07, name: "City Hall", address: "1 Dr Carlton B Goodlett Pl, San Francisco, CA 94102",
-												lat: " ", lng: " ", category: "architecture", description: " ",
+												lat: 37.7792597, lng: -122.41926469999999, category: "architecture", description: " ",
 												picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/1390286_685258894946662_351989821_n.jpg?ig_cache_key=MTIwOTY4MjE3OTQ5MDA0MzQxNQ%3D%3D.2",
 												imgOne: " ",
 												imgTwo: " ",
@@ -69,7 +69,7 @@ angular.module('ambler.controllers')
 											},
 
 											{ id: 08, name: "Clarion Alley Mural Project", address: "Clarion Alley, Mission District, San Francisco, CA",
-												lat: " ", lng: " ", category: "nature", description: " ",
+												lat: 37.7629245, lng: -122.42171889999997, category: "nature", description: " ",
 												picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/10616961_1691962627712725_596433112_n.jpg?ig_cache_key=MTIwODU0NDcwNTA3NDU1NzQ5Mw%3D%3D.2",
 												imgOne: " ",
 												imgTwo: " ",
@@ -78,7 +78,7 @@ angular.module('ambler.controllers')
 											},
 
 											{ id: 09, name: "Coit Tower", address: "1 Telegraph Hill Blvd, San Francisco, CA 94133",
-												lat: " ", lng: " ", category: "art", description: " ",
+												lat: 37.8023777, lng: -122.405823, category: "art", description: " ",
 												picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/1171981_102697150129387_2140030179_n.jpg?ig_cache_key=MTIwOTQ0MDc1NzEzMDk3MjE2Mg%3D%3D.2",
 												imgOne: " ",
 												imgTwo: " ",
@@ -87,7 +87,7 @@ angular.module('ambler.controllers')
 											},
 
 											{ id: 10, name: "Columbus Tower", address: "900 Kearny St, San Francisco, CA 94133",
-												lat: " ", lng: " ", category: "vista", description: " ",
+												lat: 37.7963935, lng: -122.40488119999998, category: "vista", description: " ",
 												picURL: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12231023_583785561790310_1716445032_n.jpg?ig_cache_key=MTIyODAwMzEzMTMzMjM3ODYzNg%3D%3D.2",
 												imgOne: " ",
 												imgTwo: " ",
@@ -96,7 +96,7 @@ angular.module('ambler.controllers')
 											},
 
 											{ id: 11, name: "Corona Heights Park", address: "Roosevelt Way & Museum Way, San Francisco, CA 94114",
-												lat: " ", lng: " ", category: "open space", description: " ",
+												lat: 37.7652816, lng: -122.44123769999999, category: "open space", description: " ",
 												picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c135.0.810.810/12797756_1529478217347818_1062922049_n.jpg?ig_cache_key=MTIwNjEzMzAxNzU1NDAwNTYzOA%3D%3D.2.c",
 												imgOne: " ",
 												imgTwo: " ",
@@ -105,7 +105,7 @@ angular.module('ambler.controllers')
 											},
 
 											{ id: 12, name: "Crissy Field", address: "1199 E Beach, San Francisco, CA 94129",
-												lat: " ", lng: " ", category: "nature", description: " ",
+												lat: 37.8057795, lng: -122.44914219999998, category: "nature", description: " ",
 												picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c135.0.809.809/12826110_1539839386312953_281070030_n.jpg?ig_cache_key=MTIwOTUwODY5NzI2MTg2NjIxOQ%3D%3D.2.c",
 												imgOne: " ",
 												imgTwo: " ",
@@ -114,7 +114,7 @@ angular.module('ambler.controllers')
 											},
 
 											{ id: 13, name: "Crown Zellerbach Building", address: "1 Bush St, San Francisco, CA 94104",
-												lat: " ", lng: " ", category: "nature", description: " ",
+												lat: 37.7909622, lng: -122.40001519999998, category: "nature", description: " ",
 												picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c102.0.875.875/12749774_1705246259691449_885808275_n.jpg?ig_cache_key=MTE4NzQzMjAzOTM1MjI1OTQ2MA%3D%3D.2.c",
 												imgOne: " ",
 												imgTwo: " ",
@@ -123,7 +123,7 @@ angular.module('ambler.controllers')
 											},
 
 											{ id: 14, name: "Cupid's Span", address: "7th St, San Francisco, CA 94105",
-												lat: " ", lng: " ", category: "architecture", description: " ",
+												lat: 37.7803148, lng: -122.41245279999998, category: "architecture", description: " ",
 												picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c135.0.809.809/12677280_496552367197998_2114467009_n.jpg?ig_cache_key=MTE4MjA3ODYwNDQ0Nzk4NzQ5OA%3D%3D.2.c",
 												imgOne: " ",
 												imgTwo: " ",
@@ -132,7 +132,7 @@ angular.module('ambler.controllers')
 											},
 
 											{ id: 15, name: "Ferry Building", address: "1 Sausalito - San Francisco Ferry Bldg, San Francisco, CA 94111",
-												lat: " ", lng: " ", category: "architecture", description: " ",
+												lat: 37.79554580000001, lng: -122.39342049999999, category: "architecture", description: " ",
 												picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c0.31.1080.1080/10349610_728900520578860_1154771412_n.jpg?ig_cache_key=MTIwODkxMzIxOTcyNzMxMDIyNQ%3D%3D.2.c",
 												imgOne: " ",
 												imgTwo: " ",
@@ -141,7 +141,7 @@ angular.module('ambler.controllers')
 											},
 
 											{ id: 16, name: "Filbert Steps", address: "Filbert, San Francisco, CA 94133",
-												lat: " ", lng: " ", category: "open space", description: " ",
+												lat: 37.802008, lng: -122.40479190000002, category: "open space", description: " ",
 												picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/10499037_165186220538917_645416689_n.jpg?ig_cache_key=MTIwOTEwMTk3MzA0NTQ3NTY0Mw%3D%3D.2",
 												imgOne: " ",
 												imgTwo: " ",
@@ -150,7 +150,7 @@ angular.module('ambler.controllers')
 											},
 
 											{ id: 17, name: "Fort Point Overlook", address: "Marine Dr, San Francisco, CA 94129",
-												lat: " ", lng: " ", category: "nature", description: " ",
+												lat: 37.8088219, lng: -122.47216930000002, category: "nature", description: " ",
 												picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/1517359_620929661407347_624888979_n.jpg?ig_cache_key=MTIwOTExMTkyNjIxMzcwMjM5OQ%3D%3D.2",
 												imgOne: " ",
 												imgTwo: " ",
@@ -159,7 +159,7 @@ angular.module('ambler.controllers')
 											},
 
 											{ id: 18, name: "Glen Canyon Park", address: "Elk St, San Francisco, CA 94127",
-												lat: " ", lng: " ", category: "vista", description: " ",
+												lat: 37.7360965, lng: -122.4397328, category: "vista", description: " ",
 												picURL: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12950267_1622846631287924_1041885643_n.jpg?ig_cache_key=MTIzMzg2MTg4MzU5NTMwNTEzMg%3D%3D.2",
 												imgOne: " ",
 												imgTwo: " ",
@@ -168,7 +168,7 @@ angular.module('ambler.controllers')
 											},
 
 											{ id: 19, name: "Grace Cathederal", address: "1100 California St, San Francisco, CA 94108",
-												lat: " ", lng: " ", category: "architecture", description: " ",
+												lat: 37.7918345, lng: -122.4133435, category: "architecture", description: " ",
 												picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c0.134.1080.1080/12383216_802162456572597_441516563_n.jpg?ig_cache_key=MTE3NzkyMDkxMTQ0MjIxNzI3OA%3D%3D.2.c",
 												imgOne: " ",
 												imgTwo: " ",
@@ -177,7 +177,7 @@ angular.module('ambler.controllers')
 											},
 
 											{ id: 20, name: "Grand View Park", address: "Grand View Park, San Francisco, CA 94122",
-												lat: " ", lng: " ", category: "nature", description: " ",
+												lat: 37.7562628, lng: -122.47184520000002, category: "nature", description: " ",
 												picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c0.135.1080.1080/11925684_867655596658030_408211881_n.jpg?ig_cache_key=MTA2ODk4MTk5MTIzOTI5ODI1Nw%3D%3D.2.c",
 												imgOne: " ",
 												imgTwo: " ",
@@ -357,6 +357,11 @@ angular.module('ambler.controllers')
 											  beauty: 10, art: 8, architecture: 8, vista: 7, nature: 6, open_space: 6, daytime: 10, night: 8, explore: 7, tour: "d" 
 											}];
 
+	//LOOP THRU LOCATIONS AND GRAB [NAME, ADDRESS, LAT, LNG]
+	for (var i = 0; i < $scope.locations.length; i++) {
+		console.log($scope.locations[i].id, $scope.locations[i].name, [$scope.locations[i].lat, $scope.locations[i].lng] );
+	}
+
 	// // FOR EACH LOOP VERSION
 	// $scope.locations.forEach(function (location) {
 	// 	// array_of_spots.push($scope.locations[i].address);
@@ -365,38 +370,38 @@ angular.module('ambler.controllers')
 	// 	});
 	// });
 
-	array_of_spots = [];
-	i = 0;
-	$scope.locations.forEach(function(location) {
-		// console.log("address found " + $scope.locations[i].address + " i = " + (i));
-		array_of_spots.push($scope.locations[i].address);
-		// console.log(location.address);
-		i = i+1;
-	});
-	console.log(array_of_spots);
+// 	array_of_spots = [];
+// 	i = 0;
+// 	$scope.locations.forEach(function(location) {
+// 		// console.log("address found " + $scope.locations[i].address + " i = " + (i));
+// 		array_of_spots.push($scope.locations[i].address);
+// 		// console.log(location.address);
+// 		i = i+1;
+// 	});
+// 	console.log(array_of_spots);
 
-// for (j=0; j<array_of_spots.length; j+=1) {
-	getCoordinates(array_of_spots[19], function(coordinates) {
-		console.log(coordinates);
-	});
+// // for (j=0; j<array_of_spots.length; j+=1) {
+// 	getCoordinates(array_of_spots[i], function(coordinates) {
+// 		console.log(coordinates);
+// 	});
 // }
 
-	function getCoordinates (address, callback) {
-		// for (i in address) {
-			var coordinates;
-			var geocoder = new google.maps.Geocoder();
-			if (geocoder) {
-				geocoder.geocode({ address: address}, function (results, status) {
-					// console.log(results);
-					var coords_obj = results[0].geometry.location;
-					var coords_address = results[0].formatted_address;
-					coordinates = [coords_obj.lat(), coords_obj.lng(), coords_address];
+	// function getCoordinates (address, callback) {
+	// 	// for (i in address) {
+	// 		var coordinates;
+	// 		var geocoder = new google.maps.Geocoder();
+	// 		if (geocoder) {
+	// 			geocoder.geocode({ address: address}, function (results, status) {
+	// 				// console.log(results);
+	// 				var coords_obj = results[0].geometry.location;
+	// 				var coords_address = results[0].formatted_address;
+	// 				coordinates = [coords_obj.lat(), coords_obj.lng(), coords_address];
 
-					callback(coordinates);
-				});
-			}
+	// 				callback(coordinates);
+	// 			});
+	// 		}
 
-		// };
-  } // close getCoordinates function
+	// 	// };
+ //  } // close getCoordinates function
 
 }); //ViewCtrl
