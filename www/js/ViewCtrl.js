@@ -2,7 +2,7 @@ angular.module('ambler.controllers')
 
 .controller('ViewCtrl', function($scope) {
 
-	geocoder = new google.maps.Geocoder();
+	// geocoder = new google.maps.Geocoder();
 
 	$scope.locations = [
 											{ id: 01, name: "500 Capp Street", address: "500 Capp St, San Francisco, CA 94110",
@@ -319,26 +319,44 @@ angular.module('ambler.controllers')
 											  beauty: 10, art: 8, architecture: 8, vista: 7, nature: 6, open_space: 6, daytime: 10, night: 8, explore: 7, tour: "d" }
 										];
 
-	// FOR EACH LOOP VERSION
-	$scope.locations.forEach(function (location) {
-		// console.log("address found " + $scope.locations[i].address + " i = " + (i));
-		// array_of_spots.push($scope.locations[i].address);
-		// console.log(location.address);
-		getCoordinates(location.address, function(coordinates) {
-			console.log(coordinates)
-		});
-		// i = i+1;
+	// // FOR EACH LOOP VERSION
+	// $scope.locations.forEach(function (location) {
+	// 	// array_of_spots.push($scope.locations[i].address);
+	// 	getCoordinates(location.address, function(coordinates) {
+	// 		console.log(coordinates)
+	// 	});
+	// });
+
+	array_of_spots = [];
+	i = 0;
+	$scope.locations.forEach(function(location) {
+		console.log("address found " + $scope.locations[i].address + " i = " + (i));
+		array_of_spots.push($scope.locations[i].address);
+		console.log(location.address);
+		i = i+1;
 	});
+	console.log(array_of_spots);
+
+
+
+	getCoordinates(array_of_spots);
 
 	function getCoordinates (address, callback) {
-    var coordinates;
-    geocoder.geocode({ address: address}, function (results, status) {
-      coords_obj = results[0].geometry.location;
-			console.log(status);
-			coords_address = results[0].formatted_address;
-      coordinates = [coords_obj.lat(), coords_obj.lng(), coords_address];
-      callback(coordinates);
-    })
+		// for (i in address) {
+			var coordinates;
+			var geocoder = new google.maps.Geocoder();
+			if (geocoder) {
+				geocoder.geocode({ address: address}, function (results, status) {
+					// console.log(results);
+					var coords_obj = results[0].geometry.location;
+					var coords_address = results[0].formatted_address;
+					coordinates = [coords_obj.lat(), coords_obj.lng(), coords_address];
+
+					callback(coordinates);
+				})
+			}
+
+		// };
   } // close getCoordinates function
 
 }); //ViewCtrl
