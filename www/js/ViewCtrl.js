@@ -319,62 +319,26 @@ angular.module('ambler.controllers')
 											  beauty: 10, art: 8, architecture: 8, vista: 7, nature: 6, open_space: 6, daytime: 10, night: 8, explore: 7, tour: "d" }
 										];
 
-										// var places = $scope.locations;
+	// FOR EACH LOOP VERSION
+	$scope.locations.forEach(function (location) {
+		// console.log("address found " + $scope.locations[i].address + " i = " + (i));
+		// array_of_spots.push($scope.locations[i].address);
+		// console.log(location.address);
+		getCoordinates(location.address, function(coordinates) {
+			console.log(coordinates)
+		});
+		// i = i+1;
+	});
 
-												// for(var i = 0; i < $scope.locations.length; i++) {
-												// 	// (function(taco) {
-												// 		getCoordinates($scope.locations[i].address, function(coordinates) {
-												// 			console.log(coordinates);
-												// 			// console.log("taco is " + taco);
-												// 		// });
-												// 	})
-												// 	// console.log($scope.locations[i].name);
-												// 	// console.log(coordinates);
-												// }
+	function getCoordinates (address, callback) {
+    var coordinates;
+    geocoder.geocode({ address: address}, function (results, status) {
+      coords_obj = results[0].geometry.location;
+			console.log(status);
+			coords_address = results[0].formatted_address;
+      coordinates = [coords_obj.lat(), coords_obj.lng(), coords_address];
+      callback(coordinates);
+    })
+  } // close getCoordinates function
 
-												// FOR EACH LOOP VERSION
-												// array_of_spots = [];
-												// i = 2;
-												// $scope.locations.forEach(function() {
-												// 	console.log("address found " + $scope.locations[i-2].address + " i-1 = " + (i - 1));
-												// 	i = i+1;
-												// 	// array_of_spots.push($scope.locations[i-2].address);
-												// 	// console.log(array_of_spots);
-												// });
-
-												// FOR EACH LOOP VERSION
-												// array_of_spots = [];
-												// i = 0;
-												$scope.locations.forEach(function(location) {
-													// console.log("address found " + $scope.locations[i].address + " i = " + (i));
-													// array_of_spots.push($scope.locations[i].address);
-													console.log(location.address);
-													// i = i+1;
-												});
-
-												// while (i < 39) {
-												// 	console.log($scope.locations.address);
-												// 	i++;
-												// }return i;
-
-												// var values = {name: 'misko', gender: 'male'};
-												// var log = [];
-												// angular.forEach($scope.locations, function(value, key) {
-  											// 	// this.push(key + ': ' + value);
-												// 	console.log($scope.locations[i].address);
-												// 	i = i+1;
-												// });
-												// }, log);
-													// expect(log).toEqual(['name: misko', 'gender: male']);
-
-	// function getCoordinates (address, callback) {
-  //   var coordinates;
-  //   geocoder.geocode({ address: address}, function (results, status) {
-  //     coords_obj = results[0].geometry.location;
-	// 		coords_address = results[0].formatted_address;
-  //     coordinates = [coords_obj.lat(), coords_obj.lng(), coords_address];
-  //     callback(coordinates);
-  //   })
-  // } // close getCoordinates function
-
-});
+}); //ViewCtrl
