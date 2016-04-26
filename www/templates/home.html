@@ -2,22 +2,26 @@
   <ion-content>
 
 		<!-- INPUT FORM W/ BUTTON -->
-		<div>
-
-
+		<!-- <div>
 			<form ng-submit="submit(address)">
         Enter Start Address:
-        <input type="text" ng-model="address" placeholder="type address" id="address"/> <!--  name="text" -->
+        <input type="text" ng-model="address" placeholder="type address" id="address"/>
         <input type="submit" id="homeStartAddy" value="Start Here" />
       </form>
-		</div>
+		</div> -->
 
 		<!-- CURRENT LOCATION BUTTON -->
-    <p>
+    <!-- <p>
       - OR -
-    </p>
-    <form ng-submit="submit()" ng-controller="HomeCtrl">
-      <input type="submit" id="homeCurrentLoc" value="Use Current Location" />
-    </form>
+    </p> -->
+
+    <button ng-controller="MapCtrl" class="button button-full button-positive" ng-click="getUserLoc()">
+      Use Current Location
+    </button>
+
+    <!-- <div ng-controller="HomeCtrl">
+      <button ng-click="currentLoc()" id="currentLoc" value="Use Current Location" />
+    </div> -->
+
   </ion-content>
 </ion-view>
