@@ -1,15 +1,18 @@
-  angular.module('ambler.controllers', [])
+angular.module('ambler')
 
-.controller('SplashCtrl', function($scope, $state) {
+.controller('SplashCtrl', function($scope, $state, dataService) {
   $scope.start = function () {
     $state.go('home');
   };
+
+  // $scope.locations = dataService.locations;
+  // console.log($scope.locations);
 })// SplashCtrl
 
 .controller('HomeCtrl', ['$scope', function($scope) {
   // input and autocomplete used to search address in google maps
   var input = document.getElementById('address');
-  // var options = {
+  // var options = {c
   //   bounds: defaultBounds,
   //   types: ['establishment']
   // };
