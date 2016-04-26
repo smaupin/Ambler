@@ -1,8 +1,8 @@
-angular.module('ambler')
+// angular.module('ambler')
 
-.controller('ViewCtrl', function($scope) {
+// .controller('ViewCtrl', function($scope) {
 
-	// // FOR EACH LOOP VERSION
+// 	// // FOR EACH LOOP VERSION
 	// $scope.locations.forEach(function (location) {
 	// 	// array_of_spots.push($scope.locations[i].address);
 	// 	getCoordinates(location.address, function(coordinates) {
@@ -44,4 +44,4 @@ angular.module('ambler')
 	// 	// };
  //  } // close getCoordinates function
 
-}); //ViewCtrl
+// }); //ViewCtrl

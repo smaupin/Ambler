@@ -4,51 +4,62 @@ angular.module('ambler')
   $scope.start = function () {
     $state.go('home');
   };
-
-  // $scope.locations = dataService.locations;
-  // console.log($scope.locations);
 })// SplashCtrl
 
-.controller('HomeCtrl', ['$scope', function($scope) {
-  // input and autocomplete used to search address in google maps
-  var input = document.getElementById('address');
-  // var options = {c
-  //   bounds: defaultBounds,
-  //   types: ['establishment']
+.controller('HomeCtrl', function($scope, dataService) {
+  $scope.locations = dataService.locations;
+  console.log($scope.locations);
+  // // input and autocomplete used to search address in google maps
+  // var input = document.getElementById('address');
+  // // var options = {c
+  // //   bounds: defaultBounds,
+  // //   types: ['establishment']
+  // // };
+  // // startAdd = new google.maps.places.Autocomplete(input);
+  // // google.maps.event.addDomListener(window, "load", initMap);
+  // $scope.submit = function() {
+  //   if (startAdd) {
+  //     // use address
+  //     // console.log(new google.maps.places.Autocomplete(input));
+  //     // console.log(startAdd);
+  //     // console.log(startAdd.gm_bindings_.types["7"].Rd["R"]);
+  //     console.log(startAdd.gm_bindings_.types["7"].Rd); // then place: - formatted_address
+  //     // console.log(typeof startAdd.gm_bindings_.types["7"].Rd);
+  //     // console.log(startAdd.gm_bindings_.types["7"].Rd['$']);
+  //     // console.log(startAdd.gm_bindings_.types["7"].Rd['R']);
+  //     // console.log(startAdd.gm_bindings_.types["7"].Rd['T']);***
+  //     // console.log(startAdd.gm_bindings_.types["7"].Rd['U']);
+  //     // console.log(startAdd.gm_bindings_.types["7"].Rd['V']);
+  //     // console.log(startAdd.gm_bindings_.types["7"].Rd['gm_bindings_']);
+  //     // console.log(startAdd.gm_bindings_.types["7"].Rd['formattedPrediction']);
+  //     // console.log(startAdd.gm_bindings_.types["7"].Rd['gm_bindings_']);
+  //     // console.log(startAdd.gm_bindings_.types["7"].Rd.['place']);***
+  //     // when the dot/bracket notation above gives us 'formatted address' save it as a variable
+  //     startPoint = "225 Bush St, San Francisco, CA 94104, USA"; // for the time being, this is hardcoded, instead of the code from the console log.
+  //     // console.log(startPoint);
+  //   }
+  //   else {
+  //     console.log("please input address");
+  //   }
   // };
+})// HomeCtrl
 
-  startAdd = new google.maps.places.Autocomplete(input);
+.controller('CheckCtrl', function($scope, dataService) {
+  $scope.locations = dataService.locations;
+  console.log($scope.locations);
 
-  $scope.submit = function() {
-    if (startAdd) {
-      // use address
-      // console.log(new google.maps.places.Autocomplete(input));
-      // console.log(startAdd);
-      // console.log(startAdd.gm_bindings_.types["7"].Rd["R"]);
-      console.log(startAdd.gm_bindings_.types["7"].Rd); // then place: - formatted_address
-      // console.log(typeof startAdd.gm_bindings_.types["7"].Rd);
-      // console.log(startAdd.gm_bindings_.types["7"].Rd['$']);
-      // console.log(startAdd.gm_bindings_.types["7"].Rd['R']);
-      // console.log(startAdd.gm_bindings_.types["7"].Rd['T']);***
-      // console.log(startAdd.gm_bindings_.types["7"].Rd['U']);
-      // console.log(startAdd.gm_bindings_.types["7"].Rd['V']);
-      // console.log(startAdd.gm_bindings_.types["7"].Rd['gm_bindings_']);
-      // console.log(startAdd.gm_bindings_.types["7"].Rd['formattedPrediction']);
-      // console.log(startAdd.gm_bindings_.types["7"].Rd['gm_bindings_']);
-      // console.log(startAdd.gm_bindings_.types["7"].Rd.['place']);***
-      // when the dot/bracket notation above gives us 'formatted address' save it as a variable
-      startPoint = "225 Bush St, San Francisco, CA 94104, USA"; // for the time being, this is hardcoded, instead of the code from the console log.
-      // console.log(startPoint);
-
-    }
-    else {
-      console.log("please input address");
-    }
-  };
-}])// HomeCtrl
+  //GRAB USER'S LAT/LNG
+  //LOOP THROUGH DATA
+  //FIND 5(RANDOM) CLOSEST TO USER
+  //PUSH INTO NEW ARRAY
+  //SEND TO CHECK.HTML
+})
 
 
-.controller('MapCtrl', function($scope, $state) { //$cordovaGeolocation
+.controller('MapCtrl', function($scope, $state, dataService) { //$cordovaGeolocation
+
+  $scope.locations = dataService.locations;
+  console.log($scope.locations);
 
   var directionsDisplay,
       directionsService = new google.maps.DirectionsService(),
@@ -88,84 +99,36 @@ angular.module('ambler')
   //
   //   initMap();
   // })
-
-  // GEOCODING
-  // geocoder = new google.maps.Geocoder();
-
-  // function getCoordinates (address, callback) {
-  //   var coordinates;
-  //   geocoder.geocode({ address: address}, function (results, status) {
-  //     coords_obj = results[0].geometry.location;
-  //     coordinates = [coords_obj.lat(), coords_obj.lng()];
-  //     callback(coordinates);
-  //   })
-  // } // close getCoordinates function
-
-  window.getCoordinates = function (address, callback) {
-    var coordinates;
-    geocoder.geocode({ address: address}, function (results, status) {
-      coords_obj = results[0].geometry.location;
-      coordinates = [coords_obj.lat(), coords_obj.lng()];
-      callback(coordinates);
-      // coords_obj = results;
-      // callback(coords_obj);
-      // callback(results[0].formatted_address);
-    });
-  };
   // function initMap() {
   //   mapOptions = mapOptions;
   //   $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
   //   directionsDisplay = new google.maps.DirectionsRenderer({map: $scope.map});
   //   var stepDisplay = new google.maps.InfoWindow();
 
-    function initMap() {
-      mapOptions = mapOptions;
-      $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
-      directionsDisplay = new google.maps.DirectionsRenderer({map: $scope.map});
-      var stepDisplay = new google.maps.InfoWindow();
+  function initMap() {
+    // var stepDisplay = new google.maps.InfoWindow();
+    mapOptions = mapOptions;
+    $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    directionsDisplay = new google.maps.DirectionsRenderer({map: $scope.map});
+    // google.maps.event.addDomListener(window, "load", initialize);
 
-    // userPin = new google.maps.Marker({
-    //   position: userLoc,
-    //   map: $scope.map,
-    //   animation: google.maps.Animation.DROP,
-    //   infoWindow: new google.maps.InfoWindow({
-    //     content: "That's Me!"
-    //   }),
-    // });
+  // userPin = new google.maps.Marker({
+  //   position: userLoc,
+  //   map: $scope.map,
+  //   animation: google.maps.Animation.DROP,
+  //   infoWindow: new google.maps.InfoWindow({
+  //     content: "That's Me!"
+  //   }),
+  // });
 
-    // var ferryPin = new google.maps.Marker({
-    //   position: new google.maps.LatLng(37.795800, -122.393459),
-    //   map: $scope.map,
-    //   animation: google.maps.Animation.DROP,
-    //   infoWindow: new google.maps.InfoWindow({
-    //     content: "Ferry Building"
-    //   }),
-    // });
+  // google.maps.event.addListener(userPin, 'click', function () {
+  //   userPin.infoWindow.open($scope.map, userPin);
+  // });
 
-    // var bobaPin = new google.maps.Marker({
-    //   position: new google.maps.LatLng(37.789987, -122.407287),
-    //   map: $scope.map,
-    //   animation: google.maps.Animation.DROP,
-    //   infoWindow: new google.maps.InfoWindow({
-    //     content: "Boba Guys"
-    //   }),
-    // });
-
-    // google.maps.event.addListener(userPin, 'click', function () {
-    //   userPin.infoWindow.open($scope.map, userPin);
-    // });
-
-    // google.maps.event.addListener(ferryPin, 'click', function () {
-    //   ferryPin.infoWindow.open($scope.map, ferryPin);
-    // });
-
-    // google.maps.event.addListener(bobaPin, 'click', function () {
-    //   bobaPin.infoWindow.open($scope.map, bobaPin);
-    // });
     directionsDisplay.setMap($scope.map);
 
     calcAndDisplayRoute(directionsDisplay, directionsService, wayPoints, map);
-  }
+  }//CLOSES initMap
 
   function calcAndDisplayRoute(directionsDisplay, directionsService, wayPoints, map) {
     var start = userLoc, //ideally geolocation or search field
@@ -192,7 +155,6 @@ angular.module('ambler')
         // console.log("cannot display route");
       }
     });
-  }
-
+  }//CLOSES calcAndDisplayRoute
 
 });//MapCtrl

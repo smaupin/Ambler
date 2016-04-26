@@ -27,7 +27,7 @@ angular.module('ambler', ['ionic']) //'ngCordova'
   $stateProvider
 
   .state('map', {
-    url: '/',
+    url: '/map',
     templateUrl: 'templates/map.html',
     controller: 'MapCtrl'
   })
@@ -38,10 +38,10 @@ angular.module('ambler', ['ionic']) //'ngCordova'
     controller: 'HomeCtrl'
   })
 
-  .state('view', {
-    url: '/view',
-    templateUrl: 'templates/view.html',
-    controller: 'ViewCtrl'
+  .state('check', {
+    url: '/check',
+    templateUrl: 'templates/check.html',
+    controller: 'CheckCtrl'
   })
 
   .state('about', {
@@ -51,26 +51,10 @@ angular.module('ambler', ['ionic']) //'ngCordova'
   })
 
   .state('splash', {
-    url: '/splash',
+    url: '/',
     templateUrl: 'templates/splash.html',
     controller: 'SplashCtrl'
   });
-
-  // .state('app', {
-  //   url: '/app',
-  //   abstract: true,
-  //   templateUrl: 'templates/menu.html',
-  //   controller: 'AppCtrl'
-  // })
-
-  // .state('app.search', {
-  //   url: '/search',
-  //   views: {
-  //     'menuContent': {
-  //       templateUrl: 'templates/search.html'
-  //     }
-  //   }
-  // })
 
   $urlRouterProvider.otherwise('/'); // if none of the above states are matched, use this as the fallback
 }); //closes .config
