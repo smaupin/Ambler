@@ -44,16 +44,20 @@ angular.module('ambler')
   // };
 })// HomeCtrl
 
-.controller('CheckCtrl', function($scope, dataService) {
+.controller('CheckCtrl', function($scope, $state, dataService) {
   $scope.locations = dataService.locations;
   // console.log($scope.locations);
+
+  $scope.goAmble = function () {
+    $state.go('map');
+  };
 
   findFiveClosest();
   console.log("closest = " + closest);
 
-var selection = [];
+  var selection = [];
 
-// loops through places given in the array 'closest' and matches them with records in the dataFactory
+  // loops through places given in the array 'closest' and matches them with records in the dataFactory
  for (i=0; i<closest.length; i++) {
 
    shortList = $scope.locations[[closest[i][0]]-1];
@@ -87,31 +91,30 @@ var selection = [];
         closest = closest.splice(0,5);
   }
 
-function findClosestN(pt,numberOfResults) {
-   var closest = [];
+  function findClosestN(pt,numberOfResults) {
+     var closest = [];
 
-   for (var i=0; i<$scope.locations.length;i++) {
+     for (var i=0; i<$scope.locations.length;i++) {
 
-     tempPoint = new google.maps.LatLng($scope.locations[i].lat, $scope.locations[i].lng);
+       tempPoint = new google.maps.LatLng($scope.locations[i].lat, $scope.locations[i].lng);
 
-     $scope.locations[i].distance = google.maps.geometry.spherical.computeDistanceBetween(pt,tempPoint);
+       $scope.locations[i].distance = google.maps.geometry.spherical.computeDistanceBetween(pt,tempPoint);
 
-    // myNewObject = [$scope.locations[i].name, $scope.locations[i].lat, $scope.locations[i].lng, $scope.locations[i].distance];
-    myNewObject = [$scope.locations[i].id, $scope.locations[i].distance];
-    // console.log(myNewObject);
+      // myNewObject = [$scope.locations[i].name, $scope.locations[i].lat, $scope.locations[i].lng, $scope.locations[i].distance];
+      myNewObject = [$scope.locations[i].id, $scope.locations[i].distance];
+      // console.log(myNewObject);
 
-     closest.push(myNewObject);
+       closest.push(myNewObject);
 
-   }
-   closest.sort(sortByDist);
-  //  console.log("sorted closest is " + closest);
-   return closest;
-}
+     }
+     closest.sort(sortByDist);
+    //  console.log("sorted closest is " + closest);
+     return closest;
+  }
 
-function sortByDist(a,b) {
-   return (a[1] - b[1]);
-}
-
+  function sortByDist(a,b) {
+     return (a[1] - b[1]);
+  }
 })
 
 

@@ -9743,3 +9743,39 @@ a.button {
 
 #startBtn {
   margin-top: 350px; }
+
+.imgLoc {
+  max-height: 135px;
+  max-width: 135px;
+  border-radius: 10px; }
+
+.item-text-wrap.row.item {
+  padding-top: 5px;
+  padding-bottom: 0px; }
+
+.checkbox-positive.item.item-checkbox {
+  position: relative;
+  padding-top: 2px;
+  padding-bottom: 5px;
+  padding-left: 35px;
+  padding-right: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px; }
+
+.checkbox.checkbox-input-hidden.disable-pointer-events.checkbox-circle {
+  padding: 0px;
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  top: 20px; }
+
+.blurb {
+  font-size: 12px; }
+
+.button.button-clear.button-positive {
+  border: none;
+  padding: 0px;
+  font-size: 14px;
+  float: right; }
