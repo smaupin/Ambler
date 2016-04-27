@@ -57,7 +57,7 @@ angular.module('ambler', ['ionic']) //'ngCordova'
   })
 
   .state('details', {
-    url: '/list/:id',
+    url: '/details',
     templateUrl: 'templates/details.html',
     controller: 'CheckCtrl'
   })

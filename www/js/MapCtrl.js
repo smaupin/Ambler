@@ -51,14 +51,18 @@ angular.module('ambler')
   };
   // console.log($scope.locations);
 
-  $scope.goAmble = function () {
+  $scope.goAmble = function() {
     $state.go('map');
   };
 
-  $scope.seeDetails = function () {
+  // $scope.seeDetails = function() {
+  //   $state.go('details');
+  // };
+
+  $scope.seeDetails = function() {
     $state.go('details');
   };
-
+  
   $scope.toggleRight = function() {
     $ionicSideMenuDelegate.toggleRight();
   };
