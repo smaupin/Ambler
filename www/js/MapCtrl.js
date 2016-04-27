@@ -46,27 +46,23 @@ angular.module('ambler')
 
 .controller('CheckCtrl', function($scope, dataService) {
   $scope.locations = dataService.locations;
-  console.log($scope.locations);
-  // console.log($scope.locations[0].lat, $scope.locations[0].lng);
+  // console.log($scope.locations);
+
   codeAddress();
 
-  //GRAB USER'S LAT/LNG
-  //LOOP THROUGH DATA
-  //FIND 5(RANDOM) CLOSEST TO USER
-  //PUSH INTO NEW ARRAY
+  //GRAB USER'S LAT/LNG - THIS STILL NEEDS TO BE CONNECTED
+  //LOOP THROUGH DATA - codeAddress()
+  //FIND 5(RANDOM) CLOSEST TO USER - findClosestN()
+  //PUSH INTO NEW ARRAY - inside the codeAddress function
   //SEND TO CHECK.HTML
-  // functions codeAddress, findClosestN, sortByDist, and calculateDistances below from a stackoverflow answer, modifying
   function codeAddress() {
 
     var hardcodedPoint = new google.maps.LatLng(37.790941, -122.401198);
 
     closest = findClosestN(hardcodedPoint,10);
 
+        // Take the first five indexes in the array that has been sorted by distance only
         closest = closest.splice(0,5);
-        console.log("closest in codeAddress is " + closest);
-        // console.log("closest.distance in codeAddress is " + closest.distance); // doesn't work
-
-
   }
 
 function findClosestN(pt,numberOfResults) {
@@ -78,70 +74,18 @@ function findClosestN(pt,numberOfResults) {
 
      $scope.locations[i].distance = google.maps.geometry.spherical.computeDistanceBetween(pt,tempPoint);
 
-    // myNewObject = $scope.locations[i].distance; //working
-    // console.log("$scope.locations[i].name is " + $scope.locations[i].name);
-    // console.log("$scope.locations[i].lat is " + $scope.locations[i].lat);
-    // console.log("$scope.locations[i].lng is " + $scope.locations[i].lng);
-    // console.log("$scope.locations[i].distance is " + $scope.locations[i].distance);
-    // myNewObject = {name: $scope.locations[i].name,
-    //             lat: $scope.locations[i].lat,
-    //             lng: $scope.locations[i].lng,
-    //             distance: $scope.locations[i].distance} // NOT working [object, object]
     myNewObject = [$scope.locations[i].name, $scope.locations[i].lat, $scope.locations[i].lng, $scope.locations[i].distance]
-    // console.log("myNewObject is " + myNewObject);
+
      closest.push(myNewObject);
 
-    //  console.log("closest inside findClosestN is " + closest);
    }
    closest.sort(sortByDist);
    return closest;
 }
 
-// function sortByDist(a,b) {
-//    return (a.distance- b.distance)
-// }
-// function sortByDist(a, b) {
-//    return (a["distance"]- b["distance"])
-//   //  console.log("a is " + a["distance"]);
-//   //  console.log("b is " + b["distance"]);
-// }
-// function sortByDist(a,b) {
-//    return (a - b);
-// }
 function sortByDist(a,b) {
    return (a[3] - b[3]);
 }
-
-// function calculateDistances(pt,closest,numberOfResults) {
-//   var service = new google.maps.DistanceMatrixService();
-//   var request =    {
-//       origins: [pt],
-//       destinations: [],
-//       travelMode: google.maps.TravelMode.DRIVING,
-//       unitSystem: google.maps.UnitSystem.METRIC,
-//       avoidHighways: true,
-//       avoidTolls: true
-//     };
-  // for (var i=0; i<closest.length; i++) request.destinations.push(closest[i].getPosition());
-  // service.getDistanceMatrix(request, function (response, status) {
-  //   if (status != google.maps.DistanceMatrixStatus.OK) {
-  //     alert('Error was: ' + status);
-  //   } else {
-  //     var origins = response.originAddresses;
-  //     var destinations = response.destinationAddresses;
-  //     var outputDiv = document.getElementById('side_bar');
-  //     outputDiv.innerHTML = '';
-
-      // var results = response.rows[0].elements;
-      // for (var i = 0; i < numberOfResults; i++) {
-        // closest[i].setMap(map);
-        // outputDiv.innerHTML += "<a href='javascript:google.maps.event.trigger(closest["+i+"],\"click\");'>"+closest[i].title + '</a><br>' + closest[i].address+"<br>"
-            // + results[i].distance.text + ' appoximately '
-            // + results[i].duration.text + '<br><hr>';
-  //     }
-  //   }
-  // });
-// }
 
 })
 
