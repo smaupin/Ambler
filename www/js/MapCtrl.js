@@ -16,6 +16,7 @@ angular.module('ambler')
   // google.maps.event.addDomListener(window, "load", initMap);
   $scope.submit = function() {
     if (startAdd.gm_bindings_.types["7"].Rd.T.length > 0) { // this just makes sure they typed *something*
+
       // use address
       // console.log("startAdd = " + startAdd);
       // console.log(startAdd.gm_bindings_.types["7"].Rd['gm_bindings_'].place["4"].Rd.input); // THANK YOU ISOM
@@ -28,7 +29,6 @@ angular.module('ambler')
     else {
       console.log("Not Found: please retype address");
     }
-    // console.log("startPoint2 = " + startPoint); // works
 
     function getCoordinates (address, callback) {
         var coordinates;
@@ -52,15 +52,7 @@ angular.module('ambler')
         homeService.catchLocation(coordinates);
         $state.go('check');
     	});
-
-    // PROBLEM - COORDINATES ABOVE WON'T RETURN BELOW AND JUST GIVES 'undefined'
-
-    // console.log("coordinates2 = " + coordinates);
-    // homeService.catchLocation(coordinates);
-    // console.log("homeService.homeServiceVar = " + homeService.homeServiceVar)
-    // return startPoint;
-  };
-  // console.log("startPoint3 = " + startPoint);
+  }; //closes $scope.submit
 })// HomeCtrl
 
 .controller('CheckCtrl', function($scope, $state, dataService, homeService) {
@@ -89,18 +81,8 @@ angular.module('ambler')
 
     // var hardcodedPoint = new google.maps.LatLng(17.790941, -122); //******** NEED TO CONNECT TO GEOLOCATION AND START ADDRESS SOMEHOW ********//
     var centerPoint = new google.maps.LatLng(homeService.list[0][0], homeService.list[0][1]);
-    // console.log("hardcodedPoint = " + hardcodedPoint);
-    // var catchFromHomeService = homeService.homeServiceVar;
+    // console.log("centerPoint = " + centerPoint);
     // console.log("homeService.list = " + homeService.list);
-    // console.log("homeService.list[0] = " + homeService.list[0]);
-    // console.log("homeService.list[0][0] = " + homeService.list[0][0]);
-    // console.log("homeService.enteredAddress = " + homeService.enteredAddress);
-
-    // catchFromHomeService = homeService.enteredAddy;
-    // console.log("catchFromHomeService = " + catchFromHomeService);
-    //
-    // catchFromHomeService = homeService.userLocLL;
-    // console.log("catchFromHomeService = " + catchFromHomeService);
 
     closest = findClosestN(centerPoint,10);
         closest = closest.splice(0,5);
@@ -148,14 +130,13 @@ angular.module('ambler')
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
+    // This will trigger on the use current location button and then capture those lat and lng and trnsfer page to check.html with them in tow.
     $scope.getUserLoc = function () {
       // console.log(userLoc);
       // console.log(userLoc.lat());
       // console.log(userLoc.lng());
       userLocObj = [userLoc.lat(), userLoc.lng()];
       homeService.catchLocation(userLocObj);
-      // console.log("homeService.homeServiceVar = " + homeService.homeServiceVar);
-
       $state.go('check');
     };
 
@@ -228,12 +209,8 @@ angular.module('ambler')
       } else {
         window.alert('Directions request failed due to ' + status);
         // console.log("cannot display route");
-      }
-    });
+      }//closes else
+    });//closes directionsService.route
   }//CLOSES calcAndDisplayRoute
 
 });//MapCtrl
-
-// getCoordinates(array_of_spots[20], function(coordinates) {
-//   		console.log(coordinates);
-//   	});
