@@ -1,4 +1,9 @@
-<ng-include src="'templates/navbar.html'"></ng-include>
+<ion-header-bar class="bar-stable">
+	<div>
+	  <h1 class="title">Ambler</h1>
+	  <button class="button icon ion-navicon"></button>
+  </div>
+</ion-header-bar>
 <ion-view>
   <ion-content class="has-header">
     <div id="map" data-tap-disabled="true"></div>
@@ -15,4 +20,12 @@
 		</div> -->
 
   </ion-content>
+  <div class="bar bar-footer bar-stable">
+    <!-- <button class="button button-clear button-light">Amble</button> -->
+    <div class="button-bar">
+      <a class="button" href="#/list">List View</a>
+      <!-- <a class="button" ng-click="goAmble()">Amble</a> -->
+      <a class="button" href="#/map">Map View</a>
+    </div>
+  </div>
 </ion-view>

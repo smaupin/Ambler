@@ -54,6 +54,18 @@ angular.module('ambler', ['ionic']) //'ngCordova'
     url: '/',
     templateUrl: 'templates/splash.html',
     controller: 'SplashCtrl'
+  })
+
+  .state('details', {
+    url: '/list/:id',
+    templateUrl: 'templates/details.html',
+    controller: 'CheckCtrl'
+  })
+
+  .state('list', {
+    url: '/list',
+    templateUrl: 'templates/list.html',
+    controller: 'CheckCtrl'
   });
 
   $urlRouterProvider.otherwise('/'); // if none of the above states are matched, use this as the fallback

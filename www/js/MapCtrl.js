@@ -6,7 +6,7 @@ angular.module('ambler')
   };
 })// SplashCtrl
 
-.controller('HomeCtrl', function($scope, dataService) {
+.controller('HomeCtrl', function($scope, dataService, $ionicSideMenuDelegate) {
   $scope.locations = dataService.locations;
   console.log($scope.locations);
   // // input and autocomplete used to search address in google maps
@@ -44,12 +44,23 @@ angular.module('ambler')
   // };
 })// HomeCtrl
 
-.controller('CheckCtrl', function($scope, $state, dataService) {
+.controller('CheckCtrl', function($scope, $state, dataService, $ionicSideMenuDelegate) {
   $scope.locations = dataService.locations;
+  $scope.$back = function() { 
+    window.history.back();
+  };
   // console.log($scope.locations);
 
   $scope.goAmble = function () {
     $state.go('map');
+  };
+
+  $scope.seeDetails = function () {
+    $state.go('details');
+  };
+
+  $scope.toggleRight = function() {
+    $ionicSideMenuDelegate.toggleRight();
   };
 
   findFiveClosest();
@@ -91,10 +102,14 @@ angular.module('ambler')
 })
 
 
-.controller('MapCtrl', function($scope, $state, dataService) { //$cordovaGeolocation
+.controller('MapCtrl', function($scope, $state, dataService, $ionicSideMenuDelegate) { //$cordovaGeolocation
 
   $scope.locations = dataService.locations;
   console.log($scope.locations);
+
+  $scope.$back = function() { 
+    window.history.back();
+  };
 
   var directionsDisplay,
       directionsService = new google.maps.DirectionsService(),
@@ -192,4 +207,4 @@ angular.module('ambler')
     });
   }//CLOSES calcAndDisplayRoute
 
-});//MapCtrl
+});
