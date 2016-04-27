@@ -26,10 +26,10 @@ angular.module('ambler', ['ionic']) //'ngCordova'
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-  .state('map', {
-    url: '/map',
-    templateUrl: 'templates/map.html',
-    controller: 'MapCtrl'
+  .state('splash', {
+    url: '/',
+    templateUrl: 'templates/splash.html',
+    controller: 'SplashCtrl'
   })
 
   .state('home', {
@@ -44,16 +44,16 @@ angular.module('ambler', ['ionic']) //'ngCordova'
     controller: 'CheckCtrl'
   })
 
-  .state('about', {
-    url: '/about',
-    templateUrl: 'templates/about.html',
-    // controller: 'HomeCtrl'
+  .state('map', {
+    url: '/map',
+    templateUrl: 'templates/map.html',
+    controller: 'MapCtrl'
   })
 
-  .state('splash', {
-    url: '/',
-    templateUrl: 'templates/splash.html',
-    controller: 'SplashCtrl'
+  .state('list', {
+    url: '/list',
+    templateUrl: 'templates/list.html',
+    controller: 'CheckCtrl'
   })
 
   .state('details', {
@@ -62,11 +62,12 @@ angular.module('ambler', ['ionic']) //'ngCordova'
     controller: 'CheckCtrl'
   })
 
-  .state('list', {
-    url: '/list',
-    templateUrl: 'templates/list.html',
-    controller: 'CheckCtrl'
+  .state('about', {
+    url: '/about',
+    templateUrl: 'templates/about.html',
+    // controller: 'HomeCtrl'
   });
+
 
   $urlRouterProvider.otherwise('/'); // if none of the above states are matched, use this as the fallback
 }); //closes .config

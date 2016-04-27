@@ -55,17 +55,9 @@ angular.module('ambler')
     $state.go('map');
   };
 
-  // $scope.seeDetails = function() {
-  //   $state.go('details');
+  // $scope.toggleRight = function() {
+  //   $ionicSideMenuDelegate.toggleRight();
   // };
-
-  $scope.seeDetails = function() {
-    $state.go('details');
-  };
-  
-  $scope.toggleRight = function() {
-    $ionicSideMenuDelegate.toggleRight();
-  };
 
   findFiveClosest();
   // console.log("closest = " + closest);
@@ -78,6 +70,14 @@ angular.module('ambler')
     selection.push(shortList);
   } 
   $scope.selections = selection;
+
+  // $scope.seeDetails = function() {
+  //   $state.go('details');
+  // };
+
+  $scope.seeDetails = function() {
+    $state.go('details');
+  };
 
   function findFiveClosest() {
 
