@@ -20,24 +20,47 @@ angular.module('ambler')
   $scope.submit = function() {
     if (startAdd.gm_bindings_.types["7"].Rd.T.length > 0) { // this just makes sure they typed *something*
       // use address
-      // console.log(startAdd);
-      // console.log(startAdd.gm_bindings_.types["7"].Rd['gm_bindings_'].place["4"].Rd.input); // THANK YOU ISOM
+      console.log("startAdd = " + startAdd);
+      console.log(startAdd.gm_bindings_.types["7"].Rd['gm_bindings_'].place["4"].Rd.input); // THANK YOU ISOM
 
       // when the dot/bracket notation above gives us 'formatted address' save it as a variable
-      startPoint = "225 Bush St, San Francisco, CA 94104, USA"; // for the time being, this is hardcoded, instead of the code from the console log.
-      // startPoint = startAdd.gm_bindings_.types["7"].Rd['gm_bindings_'].place["4"].Rd.input;
-      console.log("startPoint = " + startPoint);
+      // startPoint = "225 Bush St, San Francisco, CA 94104, USA"; // for the time being, this is hardcoded, instead of the code from the console log.
+      startPoint = startAdd.gm_bindings_.types["7"].Rd['gm_bindings_'].place["4"].Rd.input; // sets startPoint as the address String.
+      console.log("startPoint = " + startPoint); // works
     }
     else {
       console.log("Not Found: please retype address");
     }
-    console.log("startPoint2 = " + startPoint);
+    // console.log("startPoint2 = " + startPoint); // works
+
+    function getCoordinates (address, callback) {
+        var coordinates;
+        var geocoder = new google.maps.Geocoder();
+        if (geocoder) {
+          geocoder.geocode({ address: address}, function (results, status) {
+            console.log("Results = " + results);
+            var coords_obj = results[0].geometry.location;
+            var coords_address = results[0].formatted_address;
+            coordinates = [coords_obj.lat(), coords_obj.lng(), coords_address];
+
+            callback(coordinates);
+          });
+        }
+    } // close getCoordinates function
+
+    // This function will take the string address found in the autocomplete from Home page and return coordinates.
+    getCoordinates(startPoint, function(coordinates) {
+    		console.log("coordinates = " + coordinates);
+    	});
+
+    homeService.catchAddress(startPoint);
+    // console.log("homeService.homeServiceVar = " + homeService.homeServiceVar)
     // return startPoint;
   };
   // console.log("startPoint3 = " + startPoint);
 })// HomeCtrl
 
-.controller('CheckCtrl', function($scope, $state, dataService) {
+.controller('CheckCtrl', function($scope, $state, dataService, homeService) {
   $scope.locations = dataService.locations;
   // console.log($scope.locations);
 
@@ -60,6 +83,14 @@ angular.module('ambler')
   function findFiveClosest() {
 
     var hardcodedPoint = new google.maps.LatLng(17.790941, -122); //******** NEED TO CONNECT TO GEOLOCATION SOMEHOW ********//
+    var catchFromHomeService = homeService.homeServiceVar;
+    console.log("catchFromHomeService = " + catchFromHomeService);
+
+    // catchFromHomeService = homeService.enteredAddy;
+    // console.log("catchFromHomeService = " + catchFromHomeService);
+    //
+    // catchFromHomeService = homeService.userLocLL;
+    // console.log("catchFromHomeService = " + catchFromHomeService);
 
     closest = findClosestN(hardcodedPoint,10);
         closest = closest.splice(0,5);
@@ -84,7 +115,7 @@ angular.module('ambler')
 })
 
 
-.controller('MapCtrl', function($scope, $state, dataService) { //$cordovaGeolocation
+.controller('MapCtrl', function($scope, $state, dataService, homeService) { //$cordovaGeolocation
 
   $scope.locations = dataService.locations;
   // console.log($scope.locations);
@@ -111,7 +142,10 @@ angular.module('ambler')
       console.log(userLoc);
       console.log(userLoc.lat());
       console.log(userLoc.lng());
-      // console.log(startPoint);
+      userLocObj = [userLoc.lat(), userLoc.lng()];
+      homeService.catchAddress(userLocObj);
+      console.log("homeService.homeServiceVar = " + homeService.homeServiceVar)
+
       // $state.go('view');
     };
 
@@ -189,3 +223,7 @@ angular.module('ambler')
   }//CLOSES calcAndDisplayRoute
 
 });//MapCtrl
+
+// getCoordinates(array_of_spots[20], function(coordinates) {
+//   		console.log(coordinates);
+//   	});

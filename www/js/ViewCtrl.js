@@ -36,12 +36,12 @@
 	// 				var coords_obj = results[0].geometry.location;
 	// 				var coords_address = results[0].formatted_address;
 	// 				coordinates = [coords_obj.lat(), coords_obj.lng(), coords_address];
-
+	//
 	// 				callback(coordinates);
 	// 			});
 	// 		}
-
+	//
 	// 	// };
- //  } // close getCoordinates function
+  // } // close getCoordinates function
 
 // }); //ViewCtrl
