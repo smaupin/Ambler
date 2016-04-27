@@ -8,40 +8,33 @@ angular.module('ambler')
 
 .controller('HomeCtrl', function($scope, dataService) {
   $scope.locations = dataService.locations;
-  console.log($scope.locations);
-  // // input and autocomplete used to search address in google maps
-  // var input = document.getElementById('address');
-  // // var options = {c
-  // //   bounds: defaultBounds,
-  // //   types: ['establishment']
-  // // };
-  // // startAdd = new google.maps.places.Autocomplete(input);
-  // // google.maps.event.addDomListener(window, "load", initMap);
-  // $scope.submit = function() {
-  //   if (startAdd) {
-  //     // use address
-  //     // console.log(new google.maps.places.Autocomplete(input));
-  //     // console.log(startAdd);
-  //     // console.log(startAdd.gm_bindings_.types["7"].Rd["R"]);
-  //     console.log(startAdd.gm_bindings_.types["7"].Rd); // then place: - formatted_address
-  //     // console.log(typeof startAdd.gm_bindings_.types["7"].Rd);
-  //     // console.log(startAdd.gm_bindings_.types["7"].Rd['$']);
-  //     // console.log(startAdd.gm_bindings_.types["7"].Rd['R']);
-  //     // console.log(startAdd.gm_bindings_.types["7"].Rd['T']);***
-  //     // console.log(startAdd.gm_bindings_.types["7"].Rd['U']);
-  //     // console.log(startAdd.gm_bindings_.types["7"].Rd['V']);
-  //     // console.log(startAdd.gm_bindings_.types["7"].Rd['gm_bindings_']);
-  //     // console.log(startAdd.gm_bindings_.types["7"].Rd['formattedPrediction']);
-  //     // console.log(startAdd.gm_bindings_.types["7"].Rd['gm_bindings_']);
-  //     // console.log(startAdd.gm_bindings_.types["7"].Rd.['place']);***
-  //     // when the dot/bracket notation above gives us 'formatted address' save it as a variable
-  //     startPoint = "225 Bush St, San Francisco, CA 94104, USA"; // for the time being, this is hardcoded, instead of the code from the console log.
-  //     // console.log(startPoint);
-  //   }
-  //   else {
-  //     console.log("please input address");
-  //   }
+  // input and autocomplete used to search address in google maps
+  var input = document.getElementById('address');
+  // console.log("input is " + input);
+  // var options = {c
+  //   bounds: defaultBounds,
+  //   types: ['establishment']
   // };
+  startAdd = new google.maps.places.Autocomplete(input);
+  // google.maps.event.addDomListener(window, "load", initMap);
+  $scope.submit = function() {
+    if (startAdd.gm_bindings_.types["7"].Rd.T.length > 0) { // this just makes sure they typed *something*
+      // use address
+      // console.log(startAdd);
+      // console.log(startAdd.gm_bindings_.types["7"].Rd['gm_bindings_'].place["4"].Rd.input); // THANK YOU ISOM
+
+      // when the dot/bracket notation above gives us 'formatted address' save it as a variable
+      startPoint = "225 Bush St, San Francisco, CA 94104, USA"; // for the time being, this is hardcoded, instead of the code from the console log.
+      // startPoint = startAdd.gm_bindings_.types["7"].Rd['gm_bindings_'].place["4"].Rd.input;
+      console.log("startPoint = " + startPoint);
+    }
+    else {
+      console.log("Not Found: please retype address");
+    }
+    console.log("startPoint2 = " + startPoint);
+    return startPoint;
+  };
+  // console.log("startPoint3 = " + startPoint);
 })// HomeCtrl
 
 .controller('CheckCtrl', function($scope, $state, dataService) {
@@ -61,7 +54,7 @@ angular.module('ambler')
   for (i=0; i < closest.length; i++) {
     shortList = $scope.locations[[closest[i][0]]-1];
     selection.push(shortList);
-  } 
+  }
   $scope.selections = selection;
 
   function findFiveClosest() {
@@ -94,7 +87,7 @@ angular.module('ambler')
 .controller('MapCtrl', function($scope, $state, dataService) { //$cordovaGeolocation
 
   $scope.locations = dataService.locations;
-  console.log($scope.locations);
+  // console.log($scope.locations);
 
   var directionsDisplay,
       directionsService = new google.maps.DirectionsService(),
@@ -116,6 +109,9 @@ angular.module('ambler')
 
     $scope.getUserLoc = function () {
       console.log(userLoc);
+      console.log(userLoc.lat());
+      console.log(userLoc.lng());
+      // console.log(startPoint);
       // $state.go('view');
     };
 
