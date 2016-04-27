@@ -6,15 +6,12 @@ angular.module('ambler')
   };
 })// SplashCtrl
 
-.controller('HomeCtrl', function($scope, dataService, homeService) {
+.controller('HomeCtrl', function($scope, dataService) {
   $scope.locations = dataService.locations;
   // input and autocomplete used to search address in google maps
   var input = document.getElementById('address');
-  // console.log("input is " + input);
-  // var options = {c
-  //   bounds: defaultBounds,
-  //   types: ['establishment']
-  // };
+  var coordinates;
+
   startAdd = new google.maps.places.Autocomplete(input);
   // google.maps.event.addDomListener(window, "load", initMap);
   $scope.submit = function() {
@@ -41,7 +38,7 @@ angular.module('ambler')
             console.log("Results = " + results);
             var coords_obj = results[0].geometry.location;
             var coords_address = results[0].formatted_address;
-            coordinates = [coords_obj.lat(), coords_obj.lng(), coords_address];
+            coordinates = [coords_obj.lat(), coords_obj.lng()];
 
             callback(coordinates);
           });
@@ -53,7 +50,10 @@ angular.module('ambler')
     		console.log("coordinates = " + coordinates);
     	});
 
-    homeService.catchAddress(startPoint);
+    // PROBLEM - COORDINATES ABOVE WON'T RETURN BELOW AND JUST GIVES 'undefined'
+
+    console.log("coordinates2 = " + coordinates);
+    homeService.catchLocation(coordinates);
     // console.log("homeService.homeServiceVar = " + homeService.homeServiceVar)
     // return startPoint;
   };
@@ -82,9 +82,16 @@ angular.module('ambler')
 
   function findFiveClosest() {
 
-    var hardcodedPoint = new google.maps.LatLng(17.790941, -122); //******** NEED TO CONNECT TO GEOLOCATION SOMEHOW ********//
-    var catchFromHomeService = homeService.homeServiceVar;
-    console.log("catchFromHomeService = " + catchFromHomeService);
+    // homeService.list
+
+    // var hardcodedPoint = new google.maps.LatLng(17.790941, -122); //******** NEED TO CONNECT TO GEOLOCATION AND START ADDRESS SOMEHOW ********//
+    var hardcodedPoint = new google.maps.LatLng(homeService.list[0][0], homeService.list[0][1]);
+    // console.log("hardcodedPoint = " + hardcodedPoint);
+    // var catchFromHomeService = homeService.homeServiceVar;
+    // console.log("homeService.list = " + homeService.list);
+    // console.log("homeService.list[0] = " + homeService.list[0]);
+    // console.log("homeService.list[0][0] = " + homeService.list[0][0]);
+    // console.log("homeService.enteredAddress = " + homeService.enteredAddress);
 
     // catchFromHomeService = homeService.enteredAddy;
     // console.log("catchFromHomeService = " + catchFromHomeService);
@@ -116,7 +123,7 @@ angular.module('ambler')
 
 
 .controller('MapCtrl', function($scope, $state, dataService, homeService) { //$cordovaGeolocation
-
+  // $state.go("check")
   $scope.locations = dataService.locations;
   // console.log($scope.locations);
 
@@ -139,14 +146,14 @@ angular.module('ambler')
     };
 
     $scope.getUserLoc = function () {
-      console.log(userLoc);
+      // console.log(userLoc);
       console.log(userLoc.lat());
       console.log(userLoc.lng());
       userLocObj = [userLoc.lat(), userLoc.lng()];
-      homeService.catchAddress(userLocObj);
-      console.log("homeService.homeServiceVar = " + homeService.homeServiceVar)
+      homeService.catchLocation(userLocObj);
+      // console.log("homeService.homeServiceVar = " + homeService.homeServiceVar);
 
-      // $state.go('view');
+      $state.go('check');
     };
 
     initMap();
