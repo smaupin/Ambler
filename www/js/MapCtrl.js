@@ -44,7 +44,7 @@ angular.module('ambler')
   // };
 })// HomeCtrl
 
-.controller('CheckCtrl', function($scope, $state, dataService, $ionicSideMenuDelegate) {
+.controller('CheckCtrl', function($scope, $state, $stateParams, dataService, $ionicSideMenuDelegate) {
   $scope.locations = dataService.locations;
   // $scope.spot = {};
   $scope.$back = function() { 
@@ -78,7 +78,9 @@ angular.module('ambler')
 
   $scope.seeSpot = function() {
     $state.go('spot');
+    $scope.spot = ($scope.selection).getById($stateParams.id);
   };
+
 
   function findFiveClosest() {
 
