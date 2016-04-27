@@ -44,15 +44,18 @@ angular.module('ambler')
   // };
 })// HomeCtrl
 
-.controller('CheckCtrl', function($scope, dataService) {
+.controller('CheckCtrl', function($scope, $state, dataService) {
   $scope.locations = dataService.locations;
   console.log($scope.locations);
-
   //GRAB USER'S LAT/LNG
   //LOOP THROUGH DATA
   //FIND 5(RANDOM) CLOSEST TO USER
   //PUSH INTO NEW ARRAY
   //SEND TO CHECK.HTML
+
+  $scope.goAmble = function () {
+    $state.go('map');
+  };
 })
 
 
