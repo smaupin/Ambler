@@ -50,15 +50,15 @@ angular.module('ambler', ['ionic']) //'ngCordova'
     controller: 'MapCtrl'
   })
 
-  .state('list', {
-    url: '/list',
-    templateUrl: 'templates/list.html',
+  .state('spots', {
+    url: '/spots',
+    templateUrl: 'templates/spots.html',
     controller: 'CheckCtrl'
   })
 
-  .state('details', {
-    url: '/details',
-    templateUrl: 'templates/details.html',
+  .state('spot', {
+    url: '/spot/:spotId',
+    templateUrl: 'templates/spot.html',
     controller: 'CheckCtrl'
   })
 

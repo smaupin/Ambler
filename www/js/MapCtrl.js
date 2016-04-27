@@ -46,6 +46,7 @@ angular.module('ambler')
 
 .controller('CheckCtrl', function($scope, $state, dataService, $ionicSideMenuDelegate) {
   $scope.locations = dataService.locations;
+  // $scope.spot = {};
   $scope.$back = function() { 
     window.history.back();
   };
@@ -75,13 +76,13 @@ angular.module('ambler')
   //   $state.go('details');
   // };
 
-  $scope.seeDetails = function() {
-    $state.go('details');
+  $scope.seeSpot = function() {
+    $state.go('spot');
   };
 
   function findFiveClosest() {
 
-    var hardcodedPoint = new google.maps.LatLng(17.790941, -122); //******** NEED TO CONNECT TO GEOLOCATION SOMEHOW ********//
+    var hardcodedPoint = new google.maps.LatLng(37.790891, -122.401048); //******** NEED TO CONNECT TO GEOLOCATION SOMEHOW ********//
 
     closest = findClosestN(hardcodedPoint,10);
         closest = closest.splice(0,5);
