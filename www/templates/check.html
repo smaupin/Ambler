@@ -4,12 +4,12 @@
   <ion-content class="has-header">
     <div>
       <ion-list class="list">
-        <ion-item class="item-text-wrap row" ng-repeat="location in locations">
-          <div class="col col-40"><img class="imgLoc" ng-src="{{ location.picURL }}"></div>
+        <ion-item class="item-text-wrap row" ng-repeat="selection in selections">
+          <div class="col col-40"><img class="imgLoc" ng-src="{{ selection.picURL }}"></div>
           <div class="col col-45">
             <!-- <div class="row"> -->
-            <!-- {{ location.name }} -->
-            <ion-checkbox class="checkbox-positive">{{ location.name }}</ion-checkbox>
+            <!-- {{ selection.name }} -->
+            <ion-checkbox class="checkbox-positive">{{ selection.name }}</ion-checkbox>
             <!-- </div> -->
             <div class="blurb row">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry.
