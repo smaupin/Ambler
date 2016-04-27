@@ -46,16 +46,75 @@ angular.module('ambler')
 
 .controller('CheckCtrl', function($scope, $state, dataService) {
   $scope.locations = dataService.locations;
-  console.log($scope.locations);
-  //GRAB USER'S LAT/LNG
-  //LOOP THROUGH DATA
-  //FIND 5(RANDOM) CLOSEST TO USER
-  //PUSH INTO NEW ARRAY
-  //SEND TO CHECK.HTML
+  // console.log($scope.locations);
 
   $scope.goAmble = function () {
     $state.go('map');
   };
+
+  findFiveClosest();
+  console.log("closest = " + closest);
+
+  var selection = [];
+
+  // loops through places given in the array 'closest' and matches them with records in the dataFactory
+ for (i=0; i<closest.length; i++) {
+
+   shortList = $scope.locations[[closest[i][0]]-1];
+
+   selection.push(shortList);
+ }
+ // ^^^^THE FIVE CLOSEST POINTS TO ORIGIN ARE NOW IN AN ARRAY OF LOCATION OBJECTS CALLED 'selection' - examples how to reach them commented out below:
+
+  // console.log("after loop selection is " + selection);
+  // console.log("after loop selection[0] is " + selection[0]);
+  // console.log("after loop selection[0].id is " + selection[3].id);
+  // console.log("after loop selection[0].name is " + selection[3].name);
+  // console.log("after loop selection[0].address is " + selection[3].address);
+  // console.log("after loop selection[0].lat is " + selection[3].lat);
+  // console.log("after loop selection[0].lng is " + selection[3].lng);
+
+
+
+  //GRAB USER'S LAT/LNG - THIS STILL NEEDS TO BE CONNECTED
+  //LOOP THROUGH DATA - findFiveClosest()
+  //FIND 5(RANDOM) CLOSEST TO USER - findFiveClosest()
+  //PUSH INTO NEW ARRAY - inside the codeAddress function
+  //SEND TO CHECK.HTML
+  function findFiveClosest() {
+
+    var hardcodedPoint = new google.maps.LatLng(37.790941, -95);
+
+    closest = findClosestN(hardcodedPoint,10);
+
+        // Take the first five indexes in the array that has been sorted by distance only
+        closest = closest.splice(0,5);
+  }
+
+  function findClosestN(pt,numberOfResults) {
+     var closest = [];
+
+     for (var i=0; i<$scope.locations.length;i++) {
+
+       tempPoint = new google.maps.LatLng($scope.locations[i].lat, $scope.locations[i].lng);
+
+       $scope.locations[i].distance = google.maps.geometry.spherical.computeDistanceBetween(pt,tempPoint);
+
+      // myNewObject = [$scope.locations[i].name, $scope.locations[i].lat, $scope.locations[i].lng, $scope.locations[i].distance];
+      myNewObject = [$scope.locations[i].id, $scope.locations[i].distance];
+      // console.log(myNewObject);
+
+       closest.push(myNewObject);
+
+     }
+     closest.sort(sortByDist);
+    //  console.log("sorted closest is " + closest);
+     return closest;
+  }
+
+  function sortByDist(a,b) {
+     return (a[1] - b[1]);
+  }
 })
 
 
