@@ -6,7 +6,7 @@ angular.module('ambler')
   };
 })// SplashCtrl
 
-.controller('HomeCtrl', function($scope, dataService) {
+.controller('HomeCtrl', function($scope, dataService, homeService) {
   $scope.locations = dataService.locations;
   // input and autocomplete used to search address in google maps
   var input = document.getElementById('address');
@@ -32,7 +32,7 @@ angular.module('ambler')
       console.log("Not Found: please retype address");
     }
     console.log("startPoint2 = " + startPoint);
-    return startPoint;
+    // return startPoint;
   };
   // console.log("startPoint3 = " + startPoint);
 })// HomeCtrl
