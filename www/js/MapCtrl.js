@@ -6,7 +6,7 @@ angular.module('ambler')
   };
 })// SplashCtrl
 
-.controller('HomeCtrl', function($scope, dataService) {
+.controller('HomeCtrl', function($scope, $state, dataService, homeService) {
   $scope.locations = dataService.locations;
   // input and autocomplete used to search address in google maps
   var input = document.getElementById('address');
@@ -17,13 +17,13 @@ angular.module('ambler')
   $scope.submit = function() {
     if (startAdd.gm_bindings_.types["7"].Rd.T.length > 0) { // this just makes sure they typed *something*
       // use address
-      console.log("startAdd = " + startAdd);
-      console.log(startAdd.gm_bindings_.types["7"].Rd['gm_bindings_'].place["4"].Rd.input); // THANK YOU ISOM
+      // console.log("startAdd = " + startAdd);
+      // console.log(startAdd.gm_bindings_.types["7"].Rd['gm_bindings_'].place["4"].Rd.input); // THANK YOU ISOM
 
       // when the dot/bracket notation above gives us 'formatted address' save it as a variable
       // startPoint = "225 Bush St, San Francisco, CA 94104, USA"; // for the time being, this is hardcoded, instead of the code from the console log.
       startPoint = startAdd.gm_bindings_.types["7"].Rd['gm_bindings_'].place["4"].Rd.input; // sets startPoint as the address String.
-      console.log("startPoint = " + startPoint); // works
+      // console.log("startPoint = " + startPoint); // works
     }
     else {
       console.log("Not Found: please retype address");
@@ -35,7 +35,7 @@ angular.module('ambler')
         var geocoder = new google.maps.Geocoder();
         if (geocoder) {
           geocoder.geocode({ address: address}, function (results, status) {
-            console.log("Results = " + results);
+            // console.log("Results = " + results);
             var coords_obj = results[0].geometry.location;
             var coords_address = results[0].formatted_address;
             coordinates = [coords_obj.lat(), coords_obj.lng()];
@@ -45,15 +45,18 @@ angular.module('ambler')
         }
     } // close getCoordinates function
 
-    // This function will take the string address found in the autocomplete from Home page and return coordinates.
+    // This function will take the string address found in the autocomplete from Home page and return coordinates,
+    // then it will take the coordinates, feed them to the homeFactory.js homeService and change the page to check.html
     getCoordinates(startPoint, function(coordinates) {
     		console.log("coordinates = " + coordinates);
+        homeService.catchLocation(coordinates);
+        $state.go('check');
     	});
 
     // PROBLEM - COORDINATES ABOVE WON'T RETURN BELOW AND JUST GIVES 'undefined'
 
-    console.log("coordinates2 = " + coordinates);
-    homeService.catchLocation(coordinates);
+    // console.log("coordinates2 = " + coordinates);
+    // homeService.catchLocation(coordinates);
     // console.log("homeService.homeServiceVar = " + homeService.homeServiceVar)
     // return startPoint;
   };
@@ -85,7 +88,7 @@ angular.module('ambler')
     // homeService.list
 
     // var hardcodedPoint = new google.maps.LatLng(17.790941, -122); //******** NEED TO CONNECT TO GEOLOCATION AND START ADDRESS SOMEHOW ********//
-    var hardcodedPoint = new google.maps.LatLng(homeService.list[0][0], homeService.list[0][1]);
+    var centerPoint = new google.maps.LatLng(homeService.list[0][0], homeService.list[0][1]);
     // console.log("hardcodedPoint = " + hardcodedPoint);
     // var catchFromHomeService = homeService.homeServiceVar;
     // console.log("homeService.list = " + homeService.list);
@@ -99,7 +102,7 @@ angular.module('ambler')
     // catchFromHomeService = homeService.userLocLL;
     // console.log("catchFromHomeService = " + catchFromHomeService);
 
-    closest = findClosestN(hardcodedPoint,10);
+    closest = findClosestN(centerPoint,10);
         closest = closest.splice(0,5);
   }
 
@@ -147,8 +150,8 @@ angular.module('ambler')
 
     $scope.getUserLoc = function () {
       // console.log(userLoc);
-      console.log(userLoc.lat());
-      console.log(userLoc.lng());
+      // console.log(userLoc.lat());
+      // console.log(userLoc.lng());
       userLocObj = [userLoc.lat(), userLoc.lng()];
       homeService.catchLocation(userLocObj);
       // console.log("homeService.homeServiceVar = " + homeService.homeServiceVar);
