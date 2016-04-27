@@ -69,7 +69,7 @@ function dataService() {
 											beauty: 10, art: 5, architecture: 10, vista: 5, nature: 5, open_space: 5, daytime: 9, night: 10, explore: 7, tour: "d"
 										},
 
-										{ id: 08, name: "Clarion Alley Mural Project", address: "Clarion Alley, Mission District, San Francisco, CA",
+										{ id: 08, name: "Clarion Alley Murals", address: "Clarion Alley, Mission District, San Francisco, CA",
 											lat: 37.7629245, lng: -122.42171889999997, category: "nature", description: " ",
 											picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/10616961_1691962627712725_596433112_n.jpg?ig_cache_key=MTIwODU0NDcwNTA3NDU1NzQ5Mw%3D%3D.2",
 											imgOne: " ",
@@ -114,7 +114,7 @@ function dataService() {
 											beauty: 7, art: 2, architecture: 4, vista: 10, nature: 10, open_space: 10, daytime: 10, night: 2, explore: 10, tour: "b"
 										},
 
-										{ id: 13, name: "Crown Zellerbach Building", address: "1 Bush St, San Francisco, CA 94104",
+										{ id: 13, name: "Crown Zellerbach Bldg", address: "1 Bush St, San Francisco, CA 94104",
 											lat: 37.7909622, lng: -122.40001519999998, category: "nature", description: " ",
 											picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c102.0.875.875/12749774_1705246259691449_885808275_n.jpg?ig_cache_key=MTE4NzQzMjAzOTM1MjI1OTQ2MA%3D%3D.2.c",
 											imgOne: " ",
@@ -195,7 +195,7 @@ function dataService() {
 										  beauty: 8, art: 3, architecture: 1, vista: 8, nature: 10, open_space: 10, daytime: 10, night: 2, explore: 7, tour: "e"
 										},
 
-										{ id: 22, name: "India Basin Shoreline Park", address: "India Basin Shoreline Park",
+										{ id: 22, name: "India Basin Shoreline", address: "India Basin Shoreline Park",
 										  lat: 37.7340277, lng: -122.37557279999999, category: "open space", description: " ",
 										  picURL: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12797637_757913184341772_912495353_n.jpg?ig_cache_key=MTE5NDI4MzI1NTAzNjQxNDg1Nw%3D%3D.2",
 										  imgOne: " ",
@@ -329,7 +329,7 @@ function dataService() {
 										  beauty: 6, art: 0, architecture: 4, vista: 10, nature: 9, open_space: 7, daytime: 9, night: 7, explore: 2, tour: "h"
 										},
 
-										{ id: 37, name: "The 16th Avenue Tiled Steps", address: "16th Ave, San Francisco, CA 94122",
+										{ id: 37, name: "16th Ave Tiled Steps", address: "16th Ave, San Francisco, CA 94122",
 										  lat: 37.7590799, lng: -122.473772, category: "open space", description: " ",
 										  picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12142490_1067404029945664_1238402333_n.jpg?ig_cache_key=MTA5MzAxMDM0Mjc3MjAzMTg1Nw%3D%3D.2",
 										  imgOne: " ",
