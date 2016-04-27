@@ -6,7 +6,7 @@
     	<ul>
     		<li ng-repeat="location in locations">
     			<div>{{ location.id }} | {{ location.name }}</div>
-    			<div>{{ location.address }}</div>
+    			<div>{{ location.address }} {{ location.lat }},{{ location.lng }}</div>
     			<hr>
     		</li>
     	</ul>
