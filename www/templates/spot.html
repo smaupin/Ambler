@@ -3,11 +3,14 @@
 <ion-view>
   <ion-content class="has-header">
 		<!-- LOCATION TITLE SHOULD GO HERE -->
-		<div>{{ spot.name }}</div>
-		<div><img class="imgLoc" ng-src="{{ spot.picURL }}"></div>
-		<div>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-		<span>img2</span>
-		<span>img3</span>
-		<span>img4</span>
+		<div id="spotName" class="spotText">{{ spot.name }}</div>
+		<div id="spotAdd" class="spotText">{{ spot.address }}</div>
+		<div><img id="spotPic" class="imgLoc" ng-src="{{ spot.picURL }}"></div>
+			<span>img2</span>
+			<span>img3</span>
+			<span>img4</span>
+		</div>
+		<div id="spotDesc" class="spotText">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+		<div class="spotThumbs">
   </ion-content>
 </ion-view>

@@ -67,9 +67,15 @@ angular.module('ambler')
 .controller('CheckCtrl', function($scope, $state, dataService, homeService, $ionicSideMenuDelegate) {
   $scope.locations = dataService.locations;
   // $scope.spot = {};
+
   $scope.about = function () {
     $state.go('about');
   };
+
+  $scope.restart = function () {
+    $state.go('home');
+  };
+  
   $scope.$back = function() {
     window.history.back();
   };
