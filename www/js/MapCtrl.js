@@ -6,7 +6,7 @@ angular.module('ambler')
   };
 })// SplashCtrl
 
-.controller('HomeCtrl', function($scope, $state, dataService, homeService) {
+.controller('HomeCtrl', function($scope, $state, dataService, homeService, $ionicSideMenuDelegate) {
   $scope.locations = dataService.locations;
   // input and autocomplete used to search address in google maps
   var input = document.getElementById('address');
@@ -55,30 +55,76 @@ angular.module('ambler')
   }; //closes $scope.submit
 })// HomeCtrl
 
-.controller('CheckCtrl', function($scope, $state, dataService, homeService) {
+.controller('CheckCtrl', function($scope, $state, dataService, homeService, $ionicSideMenuDelegate) {
   $scope.locations = dataService.locations;
+  // $scope.spot = {};
+  $scope.$back = function() { 
+    window.history.back();
+  };
   // console.log($scope.locations);
 
-  $scope.goAmble = function () {
-    $state.go('map');
+  $scope.goAmble = function() {
+    // $state.go('map');
+    console.log($scope.chosen);
   };
+
+  // $scope.toggleRight = function() {
+  //   $ionicSideMenuDelegate.toggleRight();
+  // };
 
   findFiveClosest();
   // console.log("closest = " + closest);
 
-  var selection = [];
+  var spots = [];
 
   // loops through places given in the array 'closest' and matches them with records in the dataFactory
   for (i=0; i < closest.length; i++) {
     shortList = $scope.locations[[closest[i][0]]-1];
-    selection.push(shortList);
-  } // closes for loop
-  $scope.selections = selection;
+    spots.push(shortList);
+  } 
+  $scope.spots = spots; //THIS IS OUR ARRAY 5 CLOSEST POINTS
+
+  $scope.chosen = [];
+
+  $scope.toggleChosen = function toggleChosen(spot) {
+    var idx = $scope.chosen.indexOf(spot);
+    // console.log(spotName + " has been checked");
+
+    // is currently selected
+    if (idx > -1) {
+      $scope.chosen.splice(idx, 1);
+      console.log(spot.name + " has been spliced out of chosen");
+    }
+
+    // is newly selected
+    else {
+      $scope.chosen.push(spot);
+      console.log(spot.name + " has been pushed into chosen");
+    }
+  };
+
+
+  // console.log($scope.spots[1].id);
+
+  // $scope.seeDetails = function() {
+  //   $state.go('details');
+  // };
+
+  // $scope.seeSpot = function(spot) {
+  //   console.log(spot);
+  //   $state.go('spot', {spot: spot});
+  //   // $scope.spot = spot;
+  //   // $scope.spot = ($scope.selection).getById($stateParams.id);
+  // };
+    // $scope.spot = dataService.find($stateParams.spot[id]);
+  // console.log($scope.checkValue);
+  // document.getElementsByClassName("checkbox-positive").onclick = function() {
+  //   console.log($scope.checkboxValue);
+  //   console.log("function is firing");
+  // };
+  // document.getElementsByClassName('checkbox-positive');
 
   function findFiveClosest() {
-
-    // homeService.list
-
     // var hardcodedPoint = new google.maps.LatLng(17.790941, -122); //******** NEED TO CONNECT TO GEOLOCATION AND START ADDRESS SOMEHOW ********//
     var centerPoint = new google.maps.LatLng(homeService.list[0][0], homeService.list[0][1]);
     // console.log("centerPoint = " + centerPoint);
@@ -106,11 +152,14 @@ angular.module('ambler')
   }//closes sortByDist
 }) //closes CheckCtrl
 
-
-.controller('MapCtrl', function($scope, $state, dataService, homeService) { //$cordovaGeolocation
+.controller('MapCtrl', function($scope, $state, dataService, homeService, $ionicSideMenuDelegate) { //$cordovaGeolocation
   // $state.go("check")
   $scope.locations = dataService.locations;
   // console.log($scope.locations);
+
+  $scope.$back = function() { 
+    window.history.back();
+  };
 
   var directionsDisplay,
       directionsService = new google.maps.DirectionsService(),
@@ -213,4 +262,4 @@ angular.module('ambler')
     });//closes directionsService.route
   }//CLOSES calcAndDisplayRoute
 
-});//MapCtrl
+});
