@@ -250,7 +250,7 @@ function dataService() {
 										},
 
 										{ id: 28, name: "Ocean Beach", address: "Ocean Beach",
-											lat: 37.769312, lng: -122.512248, category: "art", description: " ",
+											lat: 37.769312, lng: -122.512248, category: "art", description: "A 3.5-mile uncrowded stretch of white beach - just you, the waves and the seabirds.  ",
 										  picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c0.134.1080.1080/10817814_180190949030316_1087374299_n.jpg?ig_cache_key=MTIwODQ1MTI2MDg0NzcxNzUzNQ%3D%3D.2.c",
 										  imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13113979_1540793612892343_1219845737_n.jpg?ig_cache_key=MTIzNzI3NjQwMDcyMzU3ODU5Mw%3D%3D.2",
 										  imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13098927_2013748268849474_1280783401_n.jpg?ig_cache_key=MTIzNzQwMzE4NTE3MjEzMzI2Nw%3D%3D.2",
@@ -259,7 +259,7 @@ function dataService() {
 										},
 
 										{ id: 29, name: "Palace of Fine Arts", address: "3301 Lyon Street, San Francisco, CA 94123",
-											lat: 37.8028993, lng: -122.44877380000003, category: "architecture", description: " ",
+											lat: 37.8028993, lng: -122.44877380000003, category: "architecture", description: "Constructed for the 1915 Panama-Pacific Exposition to display works of art.",
 										  picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12826094_973759812713494_497640592_n.jpg?ig_cache_key=MTIwOTU3NzU2MzMxMzE1NDIxMQ%3D%3D.2",
 										  imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/11374216_788308727957995_35689139_n.jpg?ig_cache_key=MTA3NTU2MzcxMDAyMzIzNDA5MQ%3D%3D.2",
 										  imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12930781_381777201992474_1814225520_n.jpg?ig_cache_key=MTIzNDExNDE2NzA2MjI4MDQ3NA%3D%3D.2",
@@ -268,7 +268,7 @@ function dataService() {
 										},
 
 										{ id: 30, name: "Pennsylvania Gardens", address: "279 Pennsylvania Ave, San Francisco, CA 94107",
-										  lat: 37.763095, lng: -122.39331600000003, category: "vista", description: " ",
+										  lat: 37.763095, lng: -122.39331600000003, category: "vista", description: "Spectacular pocket garden created by community guerrilla gardeners",
 										  picURL: "https://lh3.googleusercontent.com/-p9AaF-rVUYg/VwrXFebkYNI/AAAAAAAAJ_o/ArE0CWfBUok/s400/blogger-image--1834408890.jpg",
 										  imgOne: "https://lh3.googleusercontent.com/-p9AaF-rVUYg/VwrXFebkYNI/AAAAAAAAJ_o/ArE0CWfBUok/s400/blogger-image--1834408890.jpg",
 										  imgTwo: "http://4.bp.blogspot.com/-w6cka81ldJY/U0C9IRHX26I/AAAAAAAAId0/V5_Tgbkp9Iw/s1600/IMG_1306.jpg",
@@ -276,7 +276,7 @@ function dataService() {
 										  beauty: 8, art: 1, architecture: 3, vista: 6, nature: 10, open_space: 5, daytime: 10, night: 2, explore: 3, tour: "e" },
 
 										{ id: 31, name: "Pier 70 - Industrial Rust", address: "Pier 70, San Francisco, 94107",
-											lat: 37.7595604, lng: -122.3829202, category: "art", description: " ",
+											lat: 37.7595604, lng: -122.3829202, category: "art", description: "Historic shipyard-yesterday and Ship repair and Event space-today",
 										  picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/11906317_1733701846857872_770805625_n.jpg?ig_cache_key=MTA3NjE2MjYwMjAzMDM0NDQzMg%3D%3D.2",
 										  imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12965704_598956766937168_83237117_n.jpg?ig_cache_key=MTIzNzgzMTI3MDc1MTMzMzc3Nw%3D%3D.2",
 										  imgTwo: "https://scontent.cdninstagram.com/l/t51.2885-15/s640x640/sh0.08/e35/12519374_864032077055610_215781052_n.jpg?ig_cache_key=MTIzMTU3MjQwMzk3Mzg5NzMzMg%3D%3D.2",
@@ -285,7 +285,7 @@ function dataService() {
 										},
 
 										{ id: 32, name: "Potrero View", address: "1300 19th St, San Francisco, California 94107-2825",
-											lat: 37.7613732, lng: -122.39544910000001, category: "architecture", description: " ",
+											lat: 37.7613732, lng: -122.39544910000001, category: "architecture", description: "Photographer’s choice for stunning city skyline backdrop.",
 										  picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/1173242_202747896759286_1836880436_n.jpg?ig_cache_key=MTIwOTA3MDYyNDIzMDMwNzMzMg%3D%3D.2",
 										  imgOne: "https://c6.staticflickr.com/4/3450/3254363357_22ed7f7546_b.jpg",
 										  imgTwo: "http://www.localcolorcards.com/SAN_FRANCISCO__02-251_files/02-251%20Potrero%20View%20wide%20copy.jpg",
@@ -294,7 +294,7 @@ function dataService() {
 										},
 
 										{ id: 33, name: "Shakespeare Garden", address: "Shakespeare Garden",
-										  lat: 37.768916, lng: -122.467219, category: "open space", description: " ",
+										  lat: 37.768916, lng: -122.467219, category: "open space", description: "A romantic wedding setting nestled beside Cal Academy of Sciences",
 										  picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c0.85.1080.1080/11925743_1611557692439275_1731182733_n.jpg?ig_cache_key=MTA2MTIwMjQzMDk0NDA0MDQyMA%3D%3D.2.c",
 										  imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/1515353_1143373775673503_600264459_n.jpg?ig_cache_key=MTIwMDc3MTc4MDMzNDI1NTk3Ng%3D%3D.2",
 										  imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12747575_1737738843105180_161450567_n.jpg?ig_cache_key=MTE5NjcyNzcwMjU3OTk3Njg4Nw%3D%3D.2",
@@ -303,7 +303,7 @@ function dataService() {
 										},
 
 										{ id: 34, name: "Strawberry Hill", address: "Strawberry Hill",
-										  lat: 37.768818, lng: -122.475115, category: "open space", description: " ",
+										  lat: 37.768818, lng: -122.475115, category: "open space", description: "An island smack in the middle of Stow Lake",
 										  picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c0.135.1080.1080/11420830_1072107942823877_326873261_n.jpg?ig_cache_key=MTEwNzU5NDc1NjY0MzA0NzQzOA%3D%3D.2.c",
 										  imgOne: "https://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/12960024_1712770918992464_385511616_n.jpg?ig_cache_key=MTIzNjc1MjQzMjYwNjUwNTAzOQ%3D%3D.2",
 										  imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12424446_1718188701769303_784891688_n.jpg?ig_cache_key=MTIxNTUxMzAxNzIwODczNDM2NA%3D%3D.2",
@@ -312,7 +312,7 @@ function dataService() {
 										},
 
 										{ id: 35, name: "Sutro Heights Park", address: "Sutro Heights Park",
-										  lat: 37.7777942, lng: -122.51110749999998, category: "nature", description: " ",
+										  lat: 37.7777942, lng: -122.51110749999998, category: "nature", description: "The ruins of a 19th century earthly paradise",
 										  picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c135.0.809.809/12816951_514003218779273_1482208679_n.jpg?ig_cache_key=MTIwODk4NTM3NzI4NDc4MDAxMA%3D%3D.2.c",
 										  imgOne: "https://scontent.cdninstagram.com/l/t51.2885-15/s640x640/sh0.08/e35/12912580_454606518083109_1704395111_n.jpg?ig_cache_key=MTIyNDcwNzg4ODc5MTgzOTUyNA%3D%3D.2",
 										  imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/e15/1171807_900178876716393_556611263_n.jpg?ig_cache_key=MTAwODA5OTQxNDU3NzEwODMwNg%3D%3D.2",
@@ -321,7 +321,7 @@ function dataService() {
 										},
 
 										{ id: 36, name: "Tank Hill", address: "2 Belgrave Ave, San Francisco, CA 94117",
-											lat: 37.75986, lng: -122.44825100000003, category: "art", description: " ",
+											lat: 37.75986, lng: -122.44825100000003, category: "art", description: "Dazzling views, native plant species, hawks and butterflies",
 										  picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c0.134.1080.1080/1169127_1672088023058279_417846652_n.jpg?ig_cache_key=MTIwNjE5NDQyNDA0MDcyNjQ2OA%3D%3D.2.c",
 										  imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12907397_200043320379691_458802964_n.jpg?ig_cache_key=MTIyNjI4Mjk3NTk2MTE0MzMyNg%3D%3D.2",
 										  imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12940157_224675204576126_2043709519_n.jpg?ig_cache_key=MTIzNTUyMzkyNjE1NjQzMzY1OA%3D%3D.2",
@@ -330,7 +330,7 @@ function dataService() {
 										},
 
 										{ id: 37, name: "16th Ave Tiled Steps", address: "16th Ave, San Francisco, CA 94122",
-										  lat: 37.7590799, lng: -122.473772, category: "open space", description: " ",
+										  lat: 37.7590799, lng: -122.473772, category: "open space", description: "Neighborhood effort has created a beautiful mosaic on the risers of the 163 steps",
 										  picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12142490_1067404029945664_1238402333_n.jpg?ig_cache_key=MTA5MzAxMDM0Mjc3MjAzMTg1Nw%3D%3D.2",
 										  imgOne: "https://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/13109063_243501816002248_390420234_n.jpg?ig_cache_key=MTIzNzQ4MTY1MjY4ODQ3NDkzMQ%3D%3D.2",
 										  imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12964995_931559160275879_1419691559_n.jpg?ig_cache_key=MTIzNjc0OTczNzU0NjUxMTYwNg%3D%3D.2",
@@ -339,7 +339,7 @@ function dataService() {
 										},
 
 										{ id: 38, name: "Twin Peaks Summit", address: "501 Twin Peaks Boulevard, San Francisco, CA 94114",
-											lat: 37.7525564, lng: -122.4476191, category: "architecture", description: " ",
+											lat: 37.7525564, lng: -122.4476191, category: "architecture", description: "Two prominent hills at the center of San Francisco providing killer city views.",
 										  picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/c241.0.597.597/12139584_1484055468590811_383100891_n.jpg?ig_cache_key=MTEwODk2MTM1MDIyNDM1ODI4Nw%3D%3D.2.c",
 										  imgOne: "https://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/12959984_253234358361719_955705051_n.jpg?ig_cache_key=MTIzNjY2MDA0ODg5OTQ0ODAzOQ%3D%3D.2",
 										  imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13092512_1018550624865737_2006491568_n.jpg?ig_cache_key=MTIzNTYzNTY0MDU3MjMyMTIxOQ%3D%3D.2",
@@ -348,7 +348,7 @@ function dataService() {
 										},
 
 										{ id: 39, name: "Vis Valley Greenway", address: "Agriculture Lot of the Visitacion Valley Greenway",
-										  lat: 37.7155647, lng: -122.40624660000003, category: "vista", description: " ",
+										  lat: 37.7155647, lng: -122.40624660000003, category: "vista", description: "A verdant swath winding through the heart of Visitacion Valley",
 										  picURL: "https://scontent.cdninstagram.com/t51.2885-15/e15/11324456_1450363551926913_2028542961_n.jpg?ig_cache_key=OTk5MzQ3NDM4MDMzMjY4NjA2.2",
 										  imgOne: "https://scontent.cdninstagram.com/t51.2885-15/e15/10946458_500021563480192_1886469362_n.jpg?ig_cache_key=OTQ0NTA5NjYwOTY1MzEzNDQ2.2",
 										  imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/e15/925621_775982869111561_102607674_n.jpg?ig_cache_key=ODAwMzc0NTY2NjE3OTQyMjc4.2",
@@ -357,7 +357,7 @@ function dataService() {
 										},
 
 										{ id: 40, name: "Yerba Buena Gardens", address: "750 Howard St, San Francisco, CA 94103",
-											lat: 37.7850153, lng: -122.4023464, category: "art", description: " ",
+											lat: 37.7850153, lng: -122.4023464, category: "art", description: "Celebrate diversity and find green relief downtown",
 										  picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/c257.0.565.565/12748232_777931122322099_1219095101_n.jpg?ig_cache_key=MTE5MDMyOTI2MTk5MTQyODkzMw%3D%3D.2.c",
 										  imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12599181_221641408214207_1083612538_n.jpg?ig_cache_key=MTIzMzU3NTQ1NDE4Mjg3Mzg4MQ%3D%3D.2",
 										  imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12912536_1019376461470660_108264124_n.jpg?ig_cache_key=MTIyNjQ3NzE0NzUwNDg5MDc4OQ%3D%3D.2",
