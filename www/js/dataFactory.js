@@ -372,17 +372,3 @@ function dataService() {
 	return factory;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-

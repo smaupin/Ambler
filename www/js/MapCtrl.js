@@ -6,45 +6,56 @@ angular.module('ambler')
   };
 })// SplashCtrl
 
-.controller('HomeCtrl', function($scope, dataService, $ionicSideMenuDelegate) {
+.controller('HomeCtrl', function($scope, $state, dataService, homeService, $ionicSideMenuDelegate) {
   $scope.locations = dataService.locations;
-  console.log($scope.locations);
-  // // input and autocomplete used to search address in google maps
-  // var input = document.getElementById('address');
-  // // var options = {c
-  // //   bounds: defaultBounds,
-  // //   types: ['establishment']
-  // // };
-  // // startAdd = new google.maps.places.Autocomplete(input);
-  // // google.maps.event.addDomListener(window, "load", initMap);
-  // $scope.submit = function() {
-  //   if (startAdd) {
-  //     // use address
-  //     // console.log(new google.maps.places.Autocomplete(input));
-  //     // console.log(startAdd);
-  //     // console.log(startAdd.gm_bindings_.types["7"].Rd["R"]);
-  //     console.log(startAdd.gm_bindings_.types["7"].Rd); // then place: - formatted_address
-  //     // console.log(typeof startAdd.gm_bindings_.types["7"].Rd);
-  //     // console.log(startAdd.gm_bindings_.types["7"].Rd['$']);
-  //     // console.log(startAdd.gm_bindings_.types["7"].Rd['R']);
-  //     // console.log(startAdd.gm_bindings_.types["7"].Rd['T']);***
-  //     // console.log(startAdd.gm_bindings_.types["7"].Rd['U']);
-  //     // console.log(startAdd.gm_bindings_.types["7"].Rd['V']);
-  //     // console.log(startAdd.gm_bindings_.types["7"].Rd['gm_bindings_']);
-  //     // console.log(startAdd.gm_bindings_.types["7"].Rd['formattedPrediction']);
-  //     // console.log(startAdd.gm_bindings_.types["7"].Rd['gm_bindings_']);
-  //     // console.log(startAdd.gm_bindings_.types["7"].Rd.['place']);***
-  //     // when the dot/bracket notation above gives us 'formatted address' save it as a variable
-  //     startPoint = "225 Bush St, San Francisco, CA 94104, USA"; // for the time being, this is hardcoded, instead of the code from the console log.
-  //     // console.log(startPoint);
-  //   }
-  //   else {
-  //     console.log("please input address");
-  //   }
-  // };
+  // input and autocomplete used to search address in google maps
+  var input = document.getElementById('address');
+  var coordinates;
+
+  startAdd = new google.maps.places.Autocomplete(input);
+  // google.maps.event.addDomListener(window, "load", initMap);
+  $scope.submit = function() {
+    if (startAdd.gm_bindings_.types["7"].Rd.T.length > 0) { // this just makes sure they typed *something*
+
+      // use address
+      // console.log("startAdd = " + startAdd);
+      // console.log(startAdd.gm_bindings_.types["7"].Rd['gm_bindings_'].place["4"].Rd.input); // THANK YOU ISOM
+
+      // when the dot/bracket notation above gives us 'formatted address' save it as a variable
+      // startPoint = "225 Bush St, San Francisco, CA 94104, USA"; // for the time being, this is hardcoded, instead of the code from the console log.
+      startPoint = startAdd.gm_bindings_.types["7"].Rd['gm_bindings_'].place["4"].Rd.input; // sets startPoint as the address String.
+      // console.log("startPoint = " + startPoint); // works
+    }
+    else {
+      console.log("Not Found: please retype address");
+    }
+
+    function getCoordinates (address, callback) {
+        var coordinates;
+        var geocoder = new google.maps.Geocoder();
+        if (geocoder) {
+          geocoder.geocode({ address: address}, function (results, status) {
+            // console.log("Results = " + results);
+            var coords_obj = results[0].geometry.location;
+            var coords_address = results[0].formatted_address;
+            coordinates = [coords_obj.lat(), coords_obj.lng()];
+
+            callback(coordinates);
+          });
+        }
+    } // close getCoordinates function
+
+    // This function will take the string address found in the autocomplete from Home page and return coordinates,
+    // then it will take the coordinates, feed them to the homeFactory.js homeService and change the page to check.html
+    getCoordinates(startPoint, function(coordinates) {
+    		console.log("coordinates = " + coordinates);
+        homeService.catchLocation(coordinates);
+        $state.go('check');
+    	});
+  }; //closes $scope.submit
 })// HomeCtrl
 
-.controller('CheckCtrl', function($scope, $state, $stateParams, dataService, $ionicSideMenuDelegate) {
+.controller('CheckCtrl', function($scope, $state, dataService, homeService, $ionicSideMenuDelegate) {
   $scope.locations = dataService.locations;
   // $scope.spot = {};
   $scope.$back = function() { 
@@ -114,12 +125,14 @@ angular.module('ambler')
   // document.getElementsByClassName('checkbox-positive');
 
   function findFiveClosest() {
+    // var hardcodedPoint = new google.maps.LatLng(17.790941, -122); //******** NEED TO CONNECT TO GEOLOCATION AND START ADDRESS SOMEHOW ********//
+    var centerPoint = new google.maps.LatLng(homeService.list[0][0], homeService.list[0][1]);
+    // console.log("centerPoint = " + centerPoint);
+    // console.log("homeService.list = " + homeService.list);
 
-    var hardcodedPoint = new google.maps.LatLng(37.790891, -122.401048); //******** NEED TO CONNECT TO GEOLOCATION SOMEHOW ********//
-
-    closest = findClosestN(hardcodedPoint,10);
+    closest = findClosestN(centerPoint,10);
         closest = closest.splice(0,5);
-  }
+  }//closes findFiveClosest
 
   function findClosestN(pt,numberOfResults) {
      var closest = [];
@@ -132,18 +145,17 @@ angular.module('ambler')
      }
      closest.sort(sortByDist);
      return closest;
-  }
+  } // closes findClosestN
 
   function sortByDist(a,b) {
      return (a[1] - b[1]);
-  }
-})
+  }//closes sortByDist
+}) //closes CheckCtrl
 
-
-.controller('MapCtrl', function($scope, $state, dataService, $ionicSideMenuDelegate) { //$cordovaGeolocation
-
+.controller('MapCtrl', function($scope, $state, dataService, homeService, $ionicSideMenuDelegate) { //$cordovaGeolocation
+  // $state.go("check")
   $scope.locations = dataService.locations;
-  console.log($scope.locations);
+  // console.log($scope.locations);
 
   $scope.$back = function() { 
     window.history.back();
@@ -167,9 +179,14 @@ angular.module('ambler')
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
+    // This will trigger on the use current location button and then capture those lat and lng and trnsfer page to check.html with them in tow.
     $scope.getUserLoc = function () {
-      console.log(userLoc);
-      // $state.go('view');
+      // console.log(userLoc);
+      // console.log(userLoc.lat());
+      // console.log(userLoc.lng());
+      userLocObj = [userLoc.lat(), userLoc.lng()];
+      homeService.catchLocation(userLocObj);
+      $state.go('check');
     };
 
     initMap();
@@ -241,8 +258,8 @@ angular.module('ambler')
       } else {
         window.alert('Directions request failed due to ' + status);
         // console.log("cannot display route");
-      }
-    });
+      }//closes else
+    });//closes directionsService.route
   }//CLOSES calcAndDisplayRoute
 
 });
