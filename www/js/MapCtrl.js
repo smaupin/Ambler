@@ -24,7 +24,8 @@ angular.module('ambler')
   startAdd = new google.maps.places.Autocomplete(input);
   // google.maps.event.addDomListener(window, "load", initMap);
   $scope.submit = function() {
-    if (startAdd) { // this just makes sure they typed *something*
+    // if (startAdd.gm_bindings_.types["7"].Rd.T.length > 0) { // this just makes sure they typed *something* -- 4/27/16 broken by update of google maps api.
+    if (startAdd) { // should always trigger
 
       // use address
       // console.log("startAdd = " + startAdd);
@@ -32,8 +33,9 @@ angular.module('ambler')
 
       // when the dot/bracket notation above gives us 'formatted address' save it as a variable
       // startPoint = "225 Bush St, San Francisco, CA 94104, USA"; // for the time being, this is hardcoded, instead of the code from the console log.
-      startPoint = startAdd.gm_bindings_.types["7"].Od['gm_bindings_'].place["4"].Od.input; // sets startPoint as the address String.
-      // console.log("startPoint = " + startPoint); // works
+      // startPoint = startAdd.gm_bindings_.types["7"].Rd['gm_bindings_'].place["4"].Rd.input; // sets startPoint as the address String. -- 4/27/16 broken by updated google api structure
+      startPoint = startAdd.gm_bindings_.types["7"].Od['gm_bindings_'].place["4"].Od.input; // sets startPoint as the address String. -- 4/27/16 updated for updated google api structure
+      console.log("startPoint = " + startPoint); // works
     }
     else {
       console.log("Not Found: please retype address");
