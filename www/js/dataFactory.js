@@ -7,7 +7,7 @@ function dataService() {
 	var factory = {};
 	factory.locations = [
 										{ id: 01, name: "500 Capp Street", address: "500 Capp St, San Francisco, CA 94110",
-											lat: 37.7585649, lng: -122.41818139999998, category: "art", description: " ",
+											lat: 37.7585649, lng: -122.41818139999998, category: "art", description: "Design showcase in the former home of David Kenneth Ireland",
 											picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c135.0.810.810/12825837_842753145853729_1894560635_n.jpg?ig_cache_key=MTIwMjM3NDA3NzY4NzQzOTY4Ng%3D%3D.2.c",
 											imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12357487_1684292028483785_466997309_n.jpg?ig_cache_key=MTE2MTcyMjA3MzIyMzY5MDU0MQ%3D%3D.2",
 											imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/e15/11426504_782143715216443_253769873_n.jpg?ig_cache_key=MTAwMjk4NDY4MTAyNjI1NTYxMQ%3D%3D.2",
@@ -16,7 +16,7 @@ function dataService() {
 										},
 
 										{ id: 02, name: "Alamo Square", address: "Steiner St, San Francisco, CA 94117",
-											lat: 37.7737676, lng: -122.43246390000002, category: "architecture", description: " ",
+											lat: 37.7737676, lng: -122.43246390000002, category: "architecture", description: "Home of the world famous Painted Ladies",
 											picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c0.134.1080.1080/12338437_1706995792873260_148444126_n.jpg?ig_cache_key=MTIwODQwNTU5MzczNjA1MDk1MA%3D%3D.2.c",
 											imgOne: "https://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/12918010_253344665016400_155457420_n.jpg?ig_cache_key=MTIzNTA3NzgyNjg4MDk4MDUyNQ%3D%3D.2",
 											imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12935139_1719743564956834_1912400425_n.jpg?ig_cache_key=MTIzNjQxMzE5ODI3MjI1Mjk5Nw%3D%3D.2",
@@ -25,7 +25,7 @@ function dataService() {
 										},
 
 										{ id: 03, name: "Alemany Farm", address: "700 Alemany Blvd, San Francisco, CA 94110",
-											lat: 37.7338589, lng: -122.4126326, category: "vista", description: " ",
+											lat: 37.7338589, lng: -122.4126326, category: "vista", description: "Celebrate diversity and find green relief downtown",
 											picURL: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12346083_184686028545052_1969116424_n.jpg?ig_cache_key=MTEzODYyMDcxNjgzOTg0MDE1Ng%3D%3D.2",
 											imgOne: "https://scontent.cdninstagram.com/t51.2885-15/e15/916015_700496533348973_302923502_n.jpg?ig_cache_key=NzAyOTE1ODY3OTk0MjU2MzQ1.2",
 											imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12346083_184686028545052_1969116424_n.jpg?ig_cache_key=MTEzODYyMDcxNjgzOTg0MDE1Ng%3D%3D.2",
@@ -34,7 +34,7 @@ function dataService() {
 										},
 
 										{ id: 04, name: "Balmy Alley", address: "50 Balmy St., San Francisco, CA",
-											lat: 37.75181, lng: -122.41243359999999, category: "nature", description: " ",
+											lat: 37.75181, lng: -122.41243359999999, category: "nature", description: "Muralistas fashioned this alley with the struggles of San Francisco",
 											picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/12751201_1052975434745536_1247614223_n.jpg?ig_cache_key=MTIwODE0NTAwMzU4MDk3NzM1Mw%3D%3D.2",
 											imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12912403_103800440027058_1199635948_n.jpg?ig_cache_key=MTIzMjc4OTE5ODgyMTY3NzEwNg%3D%3D.2",
 											imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12959967_1058789237528157_1668303238_n.jpg?ig_cache_key=MTIzNTIwMjkzNDc3MTI5NjExNQ%3D%3D.2",
@@ -43,7 +43,7 @@ function dataService() {
 										},
 
 										{ id: 05, name: "Bernal Heights Park", address: "10 Bernal Heights Blvd, San Francisco, CA 94110",
-											lat: 37.743118, lng: -122.4151976, category: "art", description: " ",
+											lat: 37.743118, lng: -122.4151976, category: "art", description: "360 degree views of San Francisco on this green hill",
 											picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12826218_1689015558053290_1136123522_n.jpg?ig_cache_key=MTIwOTExNjkyNDg1OTU3NDI5Nw%3D%3D.2",
 											imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12965791_491993784334037_1278175043_n.jpg?ig_cache_key=MTIzNTgwNzgyODgzMDgxMDYwMQ%3D%3D.2",
 											imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12912569_1007385015965778_618985943_n.jpg?ig_cache_key=MTIzMzQ1MjM4MDY1MTEwNTI0Mg%3D%3D.2",
@@ -52,7 +52,7 @@ function dataService() {
 										},
 
 										{ id: 06, name: "Buena Vista Park", address: "Buena Vista & Haight, San Francisco, CA 94117",
-											lat: 37.76773, lng: -122.44020999999998, category: "open space", description: " ",
+											lat: 37.76773, lng: -122.44020999999998, category: "open space", description: "Our best outdoor make-out ballroom",
 											picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/10387930_205652173127671_1201375180_n.jpg?ig_cache_key=MTIwNTkzMDgzNzk2NTM4NDg0NQ%3D%3D.2",
 											imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12930933_1571920676433920_1751622145_n.jpg?ig_cache_key=MTIzMDE2NjAzODA2MzEwNTQ2NA%3D%3D.2",
 											imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12940325_494176774105900_1625815721_n.jpg?ig_cache_key=MTIzNTgxNDQwOTIzNTM5NzA0Ng%3D%3D.2",
@@ -61,7 +61,7 @@ function dataService() {
 										},
 
 										{ id: 07, name: "City Hall", address: "1 Dr Carlton B Goodlett Pl, San Francisco, CA 94102",
-											lat: 37.7792597, lng: -122.41926469999999, category: "architecture", description: " ",
+											lat: 37.7792597, lng: -122.41926469999999, category: "architecture", description: "One of the most stunning government buildings in the country.",
 											picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/1390286_685258894946662_351989821_n.jpg?ig_cache_key=MTIwOTY4MjE3OTQ5MDA0MzQxNQ%3D%3D.2",
 											imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12784014_967258066691015_1063201314_n.jpg?ig_cache_key=MTIwNjE2NDQ4MDcyOTU4MjUxNg%3D%3D.2",
 											imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12558343_180557822303812_360394013_n.jpg?ig_cache_key=MTE2OTcwMDA2MjE0OTI1NjU0MQ%3D%3D.2",
@@ -70,7 +70,7 @@ function dataService() {
 										},
 
 										{ id: 08, name: "Clarion Alley Murals", address: "Clarion Alley, Mission District, San Francisco, CA",
-											lat: 37.7629245, lng: -122.42171889999997, category: "nature", description: " ",
+											lat: 37.7629245, lng: -122.42171889999997, category: "nature", description: "Diego Rivera's legacy continues on the walls of this alley",
 											picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/10616961_1691962627712725_596433112_n.jpg?ig_cache_key=MTIwODU0NDcwNTA3NDU1NzQ5Mw%3D%3D.2",
 											imgOne: "https://scontent.cdninstagram.com/t51.2885-15/e15/11419248_1621869004762004_2130019119_n.jpg?ig_cache_key=MTAxMTEyNTAyNTY4NzU1NDQ1Mw%3D%3D.2",
 											imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12501663_585347881623310_1019389396_n.jpg?ig_cache_key=MTIyNjg2ODMxMTkyODE5ODk3MA%3D%3D.2",
@@ -79,7 +79,7 @@ function dataService() {
 										},
 
 										{ id: 09, name: "Coit Tower", address: "1 Telegraph Hill Blvd, San Francisco, CA 94133",
-											lat: 37.8023777, lng: -122.405823, category: "art", description: " ",
+											lat: 37.8023777, lng: -122.405823, category: "art", description: "The loveliest concrete fire hose on earth",
 											picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/1171981_102697150129387_2140030179_n.jpg?ig_cache_key=MTIwOTQ0MDc1NzEzMDk3MjE2Mg%3D%3D.2",
 											imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12934933_1095652050486090_2112951424_n.jpg?ig_cache_key=MTIzMzE1Nzk0NDc1Njg1OTUzMg%3D%3D.2",
 											imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/10387760_1152150108128590_962547950_n.jpg?ig_cache_key=MTIwMjcxMTQwMzQzODk4NTk2Ng%3D%3D.2",
@@ -88,7 +88,7 @@ function dataService() {
 										},
 
 										{ id: 10, name: "Columbus Tower", address: "900 Kearny St, San Francisco, CA 94133",
-											lat: 37.7963935, lng: -122.40488119999998, category: "vista", description: " ",
+											lat: 37.7963935, lng: -122.40488119999998, category: "vista", description: "Coppola's Copper Cupola on Columbus",
 											picURL: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12231023_583785561790310_1716445032_n.jpg?ig_cache_key=MTIyODAwMzEzMTMzMjM3ODYzNg%3D%3D.2",
 											imgOne: "https://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/10570034_508152119394371_521156128_n.jpg?ig_cache_key=MTIwNjU5MjA5MDA0ODc5NjU2Mw%3D%3D.2",
 											imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/12965144_1049308978475885_102261694_n.jpg?ig_cache_key=MTIzNjUxODc5OTc0MDMwMjU3OQ%3D%3D.2",
@@ -97,7 +97,7 @@ function dataService() {
 										},
 
 										{ id: 11, name: "Corona Heights Park", address: "Roosevelt Way & Museum Way, San Francisco, CA 94114",
-											lat: 37.7652816, lng: -122.44123769999999, category: "open space", description: " ",
+											lat: 37.7652816, lng: -122.44123769999999, category: "open space", description: "Superior views and a windchill factor",
 											picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c135.0.810.810/12797756_1529478217347818_1062922049_n.jpg?ig_cache_key=MTIwNjEzMzAxNzU1NDAwNTYzOA%3D%3D.2.c",
 											imgOne: "https://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/1170060_590816444404638_757560303_n.jpg?ig_cache_key=MTIxNDkwNzM0NjU3ODE4MzExNQ%3D%3D.2",
 											imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12530905_578915055604044_773055879_n.jpg?ig_cache_key=MTIzMTIwMzQ5NzI3NDU1MTE0MQ%3D%3D.2",
@@ -106,7 +106,7 @@ function dataService() {
 										},
 
 										{ id: 12, name: "Crissy Field", address: "1199 E Beach, San Francisco, CA 94129",
-											lat: 37.8057795, lng: -122.44914219999998, category: "nature", description: " ",
+											lat: 37.8057795, lng: -122.44914219999998, category: "nature", description: "Estuary...Airfield...Estuary",
 											picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c135.0.809.809/12826110_1539839386312953_281070030_n.jpg?ig_cache_key=MTIwOTUwODY5NzI2MTg2NjIxOQ%3D%3D.2.c",
 											imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12940225_1738342953079280_1727390722_n.jpg?ig_cache_key=MTIzNTgwMDc5MDUyMjIxNDE5Mw%3D%3D.2",
 											imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/11326976_1714909152060212_1600792340_n.jpg?ig_cache_key=MTIxMzQyNDMwMDQ3Mzg2NjkxMg%3D%3D.2",
@@ -115,7 +115,7 @@ function dataService() {
 										},
 
 										{ id: 13, name: "Crown Zellerbach Bldg", address: "1 Bush St, San Francisco, CA 94104",
-											lat: 37.7909622, lng: -122.40001519999998, category: "nature", description: " ",
+											lat: 37.7909622, lng: -122.40001519999998, category: "nature", description: "Notable architecture and bamboo garden in the heart of FiDi",
 											picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c102.0.875.875/12749774_1705246259691449_885808275_n.jpg?ig_cache_key=MTE4NzQzMjAzOTM1MjI1OTQ2MA%3D%3D.2.c",
 											imgOne: "https://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/12822372_1772899556257964_1240084366_n.jpg?ig_cache_key=MTIwODQwNDI1MTk5MTIzMjkyNA%3D%3D.2",
 											imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/11849365_858636754248748_1398115699_n.jpg?ig_cache_key=MTE5MTQxOTAyMDc3NjEwNjkxOA%3D%3D.2",
@@ -124,7 +124,7 @@ function dataService() {
 										},
 
 										{ id: 14, name: "Cupid's Span", address: "7th St, San Francisco, CA 94105",
-											lat: 37.7803148, lng: -122.41245279999998, category: "architecture", description: " ",
+											lat: 37.7803148, lng: -122.41245279999998, category: "architecture", description: "Giant left his heart in San Francisco - Cupid shot right through it.",
 											picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c135.0.809.809/12677280_496552367197998_2114467009_n.jpg?ig_cache_key=MTE4MjA3ODYwNDQ0Nzk4NzQ5OA%3D%3D.2.c",
 											imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12950358_598963313588563_989343462_n.jpg?ig_cache_key=MTIzMjM2NjkyNTIwMTc1NjEwNQ%3D%3D.2",
 											imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12934952_618432651638458_1319203099_n.jpg?ig_cache_key=MTIzMzY2MzMwODkwNTEyNjAxNw%3D%3D.2",
@@ -133,7 +133,7 @@ function dataService() {
 										},
 
 										{ id: 15, name: "Ferry Building", address: "1 Sausalito - San Francisco Ferry Bldg, San Francisco, CA 94111",
-											lat: 37.79554580000001, lng: -122.39342049999999, category: "architecture", description: " ",
+											lat: 37.79554580000001, lng: -122.39342049999999, category: "architecture", description: "Ferry terminal and home to one of the finest farmer’s markets in the country.  ",
 											picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c0.31.1080.1080/10349610_728900520578860_1154771412_n.jpg?ig_cache_key=MTIwODkxMzIxOTcyNzMxMDIyNQ%3D%3D.2.c",
 											imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12445786_1286879048008527_1871141666_n.jpg?ig_cache_key=MTIzNjMxNTMxMjMyODc0NDQxNA%3D%3D.2",
 											imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/e35/11363736_693894700751042_901137049_n.jpg?ig_cache_key=MTIyMjI4MjYwMTQ4NjMxNzMyNg%3D%3D.2",
@@ -142,7 +142,7 @@ function dataService() {
 										},
 
 										{ id: 16, name: "Filbert Steps", address: "Filbert, San Francisco, CA 94133",
-											lat: 37.802008, lng: -122.40479190000002, category: "open space", description: " ",
+											lat: 37.802008, lng: -122.40479190000002, category: "open space", description: "Built into a cliff to continue Filbert - at least for pedestrians",
 											picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/10499037_165186220538917_645416689_n.jpg?ig_cache_key=MTIwOTEwMTk3MzA0NTQ3NTY0Mw%3D%3D.2",
 											imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13099084_1048773458536344_2134903892_n.jpg?ig_cache_key=MTIzNTk4NDA0MjUyMjUwMzg2Nw%3D%3D.2",
 											imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12912458_743159955787608_1197066887_n.jpg?ig_cache_key=MTIzNDMyMDQ0ODk4NDczNzQzNA%3D%3D.2",
@@ -151,7 +151,7 @@ function dataService() {
 										},
 
 										{ id: 17, name: "Fort Point Overlook", address: "Marine Dr, San Francisco, CA 94129",
-											lat: 37.8088219, lng: -122.47216930000002, category: "nature", description: " ",
+											lat: 37.8088219, lng: -122.47216930000002, category: "nature", description: "No Vertigo at this Golden Gate vantage point",
 											picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/1517359_620929661407347_624888979_n.jpg?ig_cache_key=MTIwOTExMTkyNjIxMzcwMjM5OQ%3D%3D.2",
 											imgOne: "https://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/12940032_211917682524974_729371272_n.jpg?ig_cache_key=MTIzMzYyNzQ3NTQ5NTkxMzU2NA%3D%3D.2",
 											imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12725045_1078618025533491_54210_n.jpg?ig_cache_key=MTIzMTQzNDU2MTQyMjg1ODY2OA%3D%3D.2",
@@ -160,7 +160,7 @@ function dataService() {
 										},
 
 										{ id: 18, name: "Glen Canyon Park", address: "Elk St, San Francisco, CA 94127",
-											lat: 37.7360965, lng: -122.4397328, category: "vista", description: " ",
+											lat: 37.7360965, lng: -122.4397328, category: "vista", description: "Lose yourself in this urban canyon",
 											picURL: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12950267_1622846631287924_1041885643_n.jpg?ig_cache_key=MTIzMzg2MTg4MzU5NTMwNTEzMg%3D%3D.2",
 											imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12907303_201425306911337_804429614_n.jpg?ig_cache_key=MTIzMjAwMzI4MDg0MTYzMDkwMg%3D%3D.2",
 											imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13102366_1534303036877837_602333198_n.jpg?ig_cache_key=MTIzNTgwNTEzOTU1MjI2NDkzMA%3D%3D.2",
@@ -169,7 +169,7 @@ function dataService() {
 										},
 
 										{ id: 19, name: "Grace Cathederal", address: "1100 California St, San Francisco, CA 94108",
-											lat: 37.7918345, lng: -122.4133435, category: "architecture", description: " ",
+											lat: 37.7918345, lng: -122.4133435, category: "architecture", description: "Stunning architecture with a breathtaking view of the city",
 											picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c0.134.1080.1080/12383216_802162456572597_441516563_n.jpg?ig_cache_key=MTE3NzkyMDkxMTQ0MjIxNzI3OA%3D%3D.2.c",
 											imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12976267_1549106358724635_155905417_n.jpg?ig_cache_key=MTIzNjEzMTczMjcwODA2ODA4OQ%3D%3D.2",
 											imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12976416_218354375203412_2130142879_n.jpg?ig_cache_key=MTIyOTk5OTM3MzIzMjk0MzM0OA%3D%3D.2",
@@ -178,7 +178,7 @@ function dataService() {
 										},
 
 										{ id: 20, name: "Grand View Park", address: "Grand View Park, San Francisco, CA 94122",
-											lat: 37.7562628, lng: -122.47184520000002, category: "nature", description: " ",
+											lat: 37.7562628, lng: -122.47184520000002, category: "nature", description: "The Sunset's aptly named hilltop park",
 											picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c0.135.1080.1080/11925684_867655596658030_408211881_n.jpg?ig_cache_key=MTA2ODk4MTk5MTIzOTI5ODI1Nw%3D%3D.2.c",
 											imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12905147_714199075350006_1146367655_n.jpg?ig_cache_key=MTIzMDAwMTU4NTY3MDgxMDcyOQ%3D%3D.2",
 											imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12502035_1597604260562016_61978966_n.jpg?ig_cache_key=MTIyNDk5OTIzNDY0NjI2MTk0NQ%3D%3D.2",
@@ -187,7 +187,7 @@ function dataService() {
 										},
 
 										{ id: 21, name: "Heron's Head Park", address: "98 The Embarcadero, SF CA, 94105",
-										  lat: 37.8092049, lng: -122.41734309999998, category: "vista", description: " ",
+										  lat: 37.8092049, lng: -122.41734309999998, category: "vista", description: "22-acre open space and thriving wildlife habitat",
 										  picURL: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12747710_140676559654703_2040141235_n.jpg?ig_cache_key=MTE5NDQ3MjI1MTkxOTQ2NzUxNg%3D%3D.2",
 										  imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12935146_158540614543769_390892608_n.jpg?ig_cache_key=MTIzNjQ4MDcxNDM4NjM5NjMyMg%3D%3D.2",
 										  imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12317761_550669118426855_1009921806_n.jpg?ig_cache_key=MTIxNDgxMDQ1Mjg5MjA4Nzg3NA%3D%3D.2",
@@ -196,7 +196,7 @@ function dataService() {
 										},
 
 										{ id: 22, name: "India Basin Shoreline", address: "India Basin Shoreline Park",
-										  lat: 37.7340277, lng: -122.37557279999999, category: "open space", description: " ",
+										  lat: 37.7340277, lng: -122.37557279999999, category: "open space", description: "Secluded windswept green space with a small waterfront playground",
 										  picURL: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12797637_757913184341772_912495353_n.jpg?ig_cache_key=MTE5NDI4MzI1NTAzNjQxNDg1Nw%3D%3D.2",
 										  imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12393841_1671976336394323_764610602_n.jpg?ig_cache_key=MTE1MzI0NjE1MDE0OTg3NjMzNQ%3D%3D.2",
 										  imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12912417_1083964395004211_857209119_n.jpg?ig_cache_key=MTIzNTAxNDA5MzM1NjEwNjkzMw%3D%3D.2",
@@ -205,7 +205,7 @@ function dataService() {
 										},
 
 										{ id: 23, name: "Lady with Apples", address: "700 Polk Street, San Francisco, CA 94109",
-										  lat: 37.7833794, lng: -122.41904449999998, category: "open space", description: " ",
+										  lat: 37.7833794, lng: -122.41904449999998, category: "open space", description: "Ukranian muralist Aryz's stunning 5 story mural in the TL",
 										  picURL: "https://s-media-cache-ak0.pinimg.com/564x/32/b7/cf/32b7cfbcf99120890306086b3cc5a994.jpg",
 										  imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12935031_1013016615445062_506825180_n.jpg?ig_cache_key=MTIyNTQ5NTU1NjI5NDczMTYzOA%3D%3D.2",
 										  imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/e15/10299788_662959677092892_1226617043_n.jpg?ig_cache_key=NzA5NDU0Mzc4NDQ4MTg3NTM1.2",
@@ -214,7 +214,7 @@ function dataService() {
 										},
 
 										{ id: 24, name: "Lands End Trail", address: "Lands End Trail, San Francisco, CA",
-										  lat: 37.7858045, lng: -122.50337630000001, category: "open space", description: " ",
+										  lat: 37.7858045, lng: -122.50337630000001, category: "open space", description: "Hike along the rocky and windswept Pacific shoreline",
 										  picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/c247.0.586.586/12531153_854468611330130_538971429_n.jpg?ig_cache_key=MTIwOTIxNDEwMzY5NDYzMzY4OQ%3D%3D.2.c",
 										  imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12940107_1731645663742048_282537334_n.jpg?ig_cache_key=MTIzNjc3ODc2MjQ5NDMzMDA0MA%3D%3D.2",
 										  imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13092210_855705091208291_214641083_n.jpg?ig_cache_key=MTIzNTkyODA4MDU0NDQ3NDAwNg%3D%3D.2",
@@ -223,7 +223,7 @@ function dataService() {
 										},
 
 										{ id: 25, name: "Lyon Street Steps", address: "Broadway & Lyon Street, San Francisco, CA 94115",
-										  lat: 37.7928089, lng: -122.44643610000003, category: "", description: " ",
+										  lat: 37.7928089, lng: -122.44643610000003, category: "", description: "332 steps amongst some of the toniest mansions in town.",
 										  picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c135.0.809.809/12798015_977532112336899_268809616_n.jpg?ig_cache_key=MTIwOTA0MjU1NjE4OTQ2MDkwNA%3D%3D.2.c",
 										  imgOne: "https://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/12599496_1586426168315100_491897679_n.jpg?ig_cache_key=MTIzMTU3NzAwOTM4MDAzNDg2MA%3D%3D.2",
 										  imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13113848_1031485046931871_307050097_n.jpg?ig_cache_key=MTIzNzMyNjMzMDY3NDgxNDU2Mg%3D%3D.2",
@@ -232,7 +232,7 @@ function dataService() {
 										},
 
 										{ id: 26, name: "McLaren Water Tower", address: "McLaren Upper Resovoir",
-										  lat: 37.7219425, lng: -122.42332640000001, category: "vista", description: " ",
+										  lat: 37.7219425, lng: -122.42332640000001, category: "vista", description: "La Grande Tank - big, blue and lovely views",
 										  picURL: "https://scontent.cdninstagram.com/t51.2885-15/e15/11282677_382599438597837_1175959615_n.jpg?ig_cache_key=OTg2NDM0NjY2Mzk3OTA1NDE4.2",
 										  imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/917551_1023983160998626_18565749_n.jpg?ig_cache_key=MTE1ODg2OTQwNzk1NTcyNDY3NQ%3D%3D.2",
 										  imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/11248915_957690234274098_1240228381_n.jpg?ig_cache_key=MTA2MDIzNjgzNDU0MjUxMzE3MQ%3D%3D.2",
@@ -241,7 +241,7 @@ function dataService() {
 										},
 
 									  { id: 27, name: "Mission Dolores Park", address: "19th & Dolores St, San Francisco, CA 94114",
-										  lat: 37.7598191, lng: -122.4260362, category: "nature", description: " ",
+										  lat: 37.7598191, lng: -122.4260362, category: "nature", description: "Grass = Hipster sunning; Playground = toddler running",
 										  picURL: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/1172979_974300005993947_1383159442_n.jpg?ig_cache_key=MTIwOTU1MDU1NTc5MDgwODEwNA%3D%3D.2",
 										  imgOne: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12728657_1163478743665295_132375019_n.jpg?ig_cache_key=MTE5MDI0NTUwOTQwODIwMTMxMw%3D%3D.2",
 										  imgTwo: "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12531132_914865615301523_897790900_n.jpg?ig_cache_key=MTE5MDIzNjA3NTEzMTUyMDMzOQ%3D%3D.2",
