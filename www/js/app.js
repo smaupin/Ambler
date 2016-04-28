@@ -57,7 +57,7 @@ angular.module('ambler', ['ionic']) //'ngCordova'
   })
 
   .state('spot', {
-    url: '/spot/:spotId',
+    url: '/spot',
     templateUrl: 'templates/spot.html',
     controller: 'CheckCtrl'
   })

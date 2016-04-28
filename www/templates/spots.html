@@ -11,12 +11,12 @@
   <ion-content class="has-header has-footer">
     <div>
       <ion-list class="list">
-        <ion-item class="item-text-wrap row" ng-repeat="selection in selections">
-          <div class="col col-40"><img class="imgLoc" ng-src="{{ selection.picURL }}"></div>
+        <ion-item class="item-text-wrap row" ng-repeat="spot in spots">
+          <div class="col col-40"><img class="imgLoc" ng-src="{{ spot.picURL }}"></div>
           <div class="col col-45">
             <!-- <div class="row"> -->
-            {{ selection.name }}
-            <!-- <ion-checkbox class="checkbox-positive">{{ selection.name }}</ion-checkbox> -->
+            <a ng-click="seeSpot(spot)">{{ spot.name }}</a><!-- {{ spot.name }} -->
+            <!-- <ion-checkbox class="checkbox-positive">{{ spot.name }}</ion-checkbox> -->
             <!-- </div> -->
             <div class="blurb row">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -24,9 +24,9 @@
             <!-- <button class="button button-clear button-positive" ng-click="seeSpot()">
               Read More...
             </button> -->
-            <a class="button button-clear button-positive">
+            <!-- <a class="button button-clear button-positive" ng-click="seeSpot()">
               Read More...
-            </a>
+            </a> -->
           </div> <!-- .col-45 -->
         </ion-item>
       </ion-list>
@@ -35,7 +35,7 @@
   <div class="bar bar-footer bar-stable">
     <!-- <button class="button button-clear button-light">Amble</button> -->
     <div class="button-bar">
-      <a class="button" href="#/list">List View</a>
+      <a class="button" href="#/spots">List View</a>
       <!-- <a class="button" ng-click="goAmble()">Amble</a> -->
       <a class="button" href="#/map">Map View</a>
     </div>

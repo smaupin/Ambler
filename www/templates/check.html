@@ -5,17 +5,17 @@
   <ion-content class="has-header has-footer">
     <div>
       <ion-list class="list">
-        <ion-item class="item-text-wrap row" ng-repeat="selection in selections">
-          <div class="col col-40"><img class="imgLoc" ng-src="{{ selection.picURL }}"></div>
+        <ion-item class="item-text-wrap row" ng-repeat="spot in spots">
+          <div class="col col-40"><img class="imgLoc" ng-src="{{ spot.picURL }}"></div>
           <div class="col col-45">
             <!-- <div class="row"> -->
-            <!-- {{ selection.name }} -->
-            <ion-checkbox class="checkbox-positive">{{ selection.name }}</ion-checkbox>
+            <!-- {{ spot.name }} -->
+            <ion-checkbox ng-checked="chosen.indexOf(spot) > -1" ng-model="checkValue" ng-click="toggleChosen(spot)" class="checkbox-positive">{{ spot.name }}</ion-checkbox>
             <!-- </div> -->
             <div class="blurb row">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             </div>
-            <button class="button button-clear button-positive" ng-click="seeDetails()">
+            <button class="button button-clear button-positive" ng-click="seeSpot()">
               Read More...
             </button>
           </div> <!-- .col-45 -->

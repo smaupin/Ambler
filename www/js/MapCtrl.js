@@ -53,7 +53,8 @@ angular.module('ambler')
   // console.log($scope.locations);
 
   $scope.goAmble = function() {
-    $state.go('map');
+    // $state.go('map');
+    console.log($scope.chosen);
   };
 
   // $scope.toggleRight = function() {
@@ -63,24 +64,54 @@ angular.module('ambler')
   findFiveClosest();
   // console.log("closest = " + closest);
 
-  var selection = [];
+  var spots = [];
 
   // loops through places given in the array 'closest' and matches them with records in the dataFactory
   for (i=0; i < closest.length; i++) {
     shortList = $scope.locations[[closest[i][0]]-1];
-    selection.push(shortList);
+    spots.push(shortList);
   } 
-  $scope.selections = selection;
+  $scope.spots = spots; //THIS IS OUR ARRAY 5 CLOSEST POINTS
+
+  $scope.chosen = [];
+
+  $scope.toggleChosen = function toggleChosen(spot) {
+    var idx = $scope.chosen.indexOf(spot);
+    // console.log(spotName + " has been checked");
+
+    // is currently selected
+    if (idx > -1) {
+      $scope.chosen.splice(idx, 1);
+      console.log(spot.name + " has been spliced out of chosen");
+    }
+
+    // is newly selected
+    else {
+      $scope.chosen.push(spot);
+      console.log(spot.name + " has been pushed into chosen");
+    }
+  };
+
+
+  // console.log($scope.spots[1].id);
 
   // $scope.seeDetails = function() {
   //   $state.go('details');
   // };
 
-  $scope.seeSpot = function() {
-    $state.go('spot');
-    $scope.spot = ($scope.selection).getById($stateParams.id);
-  };
-
+  // $scope.seeSpot = function(spot) {
+  //   console.log(spot);
+  //   $state.go('spot', {spot: spot});
+  //   // $scope.spot = spot;
+  //   // $scope.spot = ($scope.selection).getById($stateParams.id);
+  // };
+    // $scope.spot = dataService.find($stateParams.spot[id]);
+  // console.log($scope.checkValue);
+  // document.getElementsByClassName("checkbox-positive").onclick = function() {
+  //   console.log($scope.checkboxValue);
+  //   console.log("function is firing");
+  // };
+  // document.getElementsByClassName('checkbox-positive');
 
   function findFiveClosest() {
 

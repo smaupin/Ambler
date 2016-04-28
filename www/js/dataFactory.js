@@ -365,6 +365,24 @@ function dataService() {
 										  beauty: 10, art: 8, architecture: 8, vista: 7, nature: 6, open_space: 6, daytime: 10, night: 8, explore: 7, tour: "d"
 										}
 								];
+	factory.find = function(id) {
+		return factory.locations[id];
+	};
 
 	return factory;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
