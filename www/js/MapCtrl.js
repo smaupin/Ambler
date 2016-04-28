@@ -84,6 +84,8 @@ angular.module('ambler')
   }
   $scope.spots = spots; //THIS IS OUR ARRAY 5 CLOSEST POINTS
 
+  $scope.chosenSpots = homeService.hold[0];
+
   $scope.chosen = [];
 
   $scope.toggleChosen = function toggleChosen(spot) {
@@ -107,25 +109,18 @@ angular.module('ambler')
   };
 
 
-  // console.log($scope.spots[1].id);
+  $scope.seeSpot = function(spot) {
+    console.log(spot);
+    $state.go('spot', {"spot": spot});
 
-  // $scope.seeDetails = function() {
-  //   $state.go('details');
-  // };
+    homeService.sendSpot(spot);
 
-  // $scope.seeSpot = function(spot) {
-  //   console.log(spot);
-  //   $state.go('spot', {spot: spot});
-  //   // $scope.spot = spot;
-  //   // $scope.spot = ($scope.selection).getById($stateParams.id);
-  // };
-    // $scope.spot = dataService.find($stateParams.spot[id]);
-  // console.log($scope.checkValue);
-  // document.getElementsByClassName("checkbox-positive").onclick = function() {
-  //   console.log($scope.checkboxValue);
-  //   console.log("function is firing");
-  // };
-  // document.getElementsByClassName('checkbox-positive');
+
+    // $scope.spot = spot;
+    // $scope.spot = ($scope.selection).getById($stateParams.id);
+  };
+
+  $scope.spot = homeService.display[0];
 
   function findFiveClosest() {
     // var hardcodedPoint = new google.maps.LatLng(17.790941, -122); //******** NEED TO CONNECT TO GEOLOCATION AND START ADDRESS SOMEHOW ********//
