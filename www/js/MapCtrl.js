@@ -72,7 +72,7 @@ angular.module('ambler')
   for (i=0; i < closest.length; i++) {
     shortList = $scope.locations[[closest[i][0]]-1];
     selection.push(shortList);
-  }
+  } // closes for loop
   $scope.selections = selection;
 
   function findFiveClosest() {
@@ -86,7 +86,7 @@ angular.module('ambler')
 
     closest = findClosestN(centerPoint,10);
         closest = closest.splice(0,5);
-  }
+  }//closes findFiveClosest
 
   function findClosestN(pt,numberOfResults) {
      var closest = [];
@@ -99,12 +99,12 @@ angular.module('ambler')
      }
      closest.sort(sortByDist);
      return closest;
-  }
+  } // closes findClosestN
 
   function sortByDist(a,b) {
      return (a[1] - b[1]);
-  }
-})
+  }//closes sortByDist
+}) //closes CheckCtrl
 
 
 .controller('MapCtrl', function($scope, $state, dataService, homeService) { //$cordovaGeolocation
