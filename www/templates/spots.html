@@ -1,9 +1,8 @@
-<!-- <ng-include src="'templates/navbar.html'"></ng-include> -->
-<!-- <ng-include src="'templates/sideMenu.html'"></ng-include> -->
 <ion-header-bar class="bar-stable">
   <div>
+    <button class="button ion-ios-location-outline" ng-click="restart()"></button>
     <h1 class="title">Ambler</h1>
-    <button class="button icon ion-navicon"></button>
+    <button class="button ion-ios-information-outline" ng-click="about()"></button>
   </div>
 </ion-header-bar>
 
@@ -15,7 +14,7 @@
           <div class="col col-40"><img class="imgLoc" ng-src="{{ spot.picURL }}"></div>
           <div class="col col-45">
             <!-- <div class="row"> -->
-            <a ng-click="seeSpot(spot)">{{ spot.name }}</a><!-- {{ spot.name }} -->
+            <a id="spotTitle">{{ spot.name }}</a>
             <!-- <ion-checkbox class="checkbox-positive">{{ spot.name }}</ion-checkbox> -->
             <!-- </div> -->
             <div class="blurb row">
@@ -24,9 +23,9 @@
             <!-- <button class="button button-clear button-positive" ng-click="seeSpot()">
               Read More...
             </button> -->
-            <!-- <a class="button button-clear button-positive" ng-click="seeSpot()">
+            <a class="button button-clear button-positive" ng-click="seeSpot(spot)">
               Read More...
-            </a> -->
+            </a>
           </div> <!-- .col-45 -->
         </ion-item>
       </ion-list>

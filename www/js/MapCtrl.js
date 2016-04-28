@@ -8,6 +8,15 @@ angular.module('ambler')
 
 .controller('HomeCtrl', function($scope, $state, dataService, homeService, $ionicSideMenuDelegate) {
   $scope.locations = dataService.locations;
+  $scope.restart = function () {
+    $state.go('home');
+  };
+  $scope.about = function () {
+    $state.go('about');
+  };
+  $scope.$back = function() {
+    window.history.back();
+  };
   // input and autocomplete used to search address in google maps
   var input = document.getElementById('address');
   var coordinates;
@@ -60,6 +69,15 @@ angular.module('ambler')
 .controller('CheckCtrl', function($scope, $state, dataService, homeService, $ionicSideMenuDelegate) {
   $scope.locations = dataService.locations;
   // $scope.spot = {};
+
+  $scope.about = function () {
+    $state.go('about');
+  };
+
+  $scope.restart = function () {
+    $state.go('home');
+  };
+  
   $scope.$back = function() {
     window.history.back();
   };
@@ -156,7 +174,12 @@ angular.module('ambler')
   // $state.go("check")
   $scope.locations = dataService.locations;
   // console.log($scope.locations);
-
+  $scope.about = function () {
+    $state.go('about');
+  };
+  $scope.restart = function () {
+    $state.go('home');
+  };
   $scope.$back = function() {
     window.history.back();
   };

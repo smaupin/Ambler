@@ -31,11 +31,84 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 #splash {
-	background: url("/img/SPLASH with LOGO.png") no-repeat center;
+	background: url("/img/sutro-ambler-beautiful.png") no-repeat center;
 }
 
 #startBtn {
-	margin-top: 350px;
+	margin-top: 460px;
+	font-size: 24px;
+	padding: auto 30px auto 30px;
+	background-color: #f28383;
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 500;
+}
+
+.bar-stable.bar.bar-header {
+	background-color: #f28383;
+}
+
+.bar.bar-stable .title {
+	color: white;
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 900;
+}
+
+.button.button.ion-ios-information-outline {
+	background-color: #f28383;
+	font-size: 30px;
+	color: white;
+}
+
+.button.button.ion-ios-location-outline {
+	background-color: #f28383;
+	font-size: 30px;
+	color: white;
+}
+
+a.button.icon-left.ion-chevron-left.button-clear.button-dark {
+	color: white
+}
+
+.bar.bar-footer.bar-stable {
+	border-color: #f28383;
+	background-color: #f28383;
+}
+
+.bar-stable .button {
+	background-color: #f28383;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 15px;
+	color: white;
+}
+
+form.ng-pristine.ng-valid {
+	margin-top: 90px;
+}
+
+.homeText {
+	font-family: 'Quicksand', sans-serif;
+	text-align: center;
+	font-weight: 900;
+	font-size: 20px;
+	margin: 40px auto 40px auto
+}
+
+#homeStartAddy {
+	background-color: #f28383;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 20px;
+	font-weight: 900;
+}
+
+.card .item, .list-inset .item, .padding > .list .item, .padding-horizontal > .list .item {
+	border-radius: 5px;
+}
+
+.button.button.button-block.button-positive {
+	background-color: #f28383;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 20px;
+	font-weight: 900;
 }
 
 .imgLoc {
@@ -47,6 +120,15 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .item-text-wrap.row.item {
 	padding-top: 5px;
 	padding-bottom: 0px;
+}
+
+.checkbox-positive input:before, .checkbox-positive .checkbox-icon:before {
+	border-color: #f28383;
+}
+
+.checkbox-positive input:checked:before, .checkbox-positive input:checked + .checkbox-icon:before {
+	background-color: #f28383;
+	border-color: #f28383;
 }
 
 .checkbox-positive.item.item-checkbox {
@@ -69,15 +151,108 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 	top: 20px;
 }
 
+.item-content.disable-pointer-events {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 15px;
+}
+
 .blurb {
 	font-size: 12px;
+	font-family: 'Quicksand', sans-serif;
 }
 
 .button.button-clear.button-positive {
+	font-family: 'Quicksand', sans-serif;
 	border: none;
 	padding: 0px;
 	font-size: 14px;
 	float: right;
+	color: #f28383;
+}
+
+.bar.bar-footer.bar-positive {
+	background-color: #f28383;
+}
+
+#goAmble {
+	background-color: #f28383;
+	font-size: 25px;
+}
+
+.spotText {
+	font-family: 'Quicksand', sans-serif;
+	text-align: center;
+}
+
+#spotTitle {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 20px;
+	color: #f28383;
+}
+
+#spotName {
+	font-size: 30px;
+	margin: 30px 0px 15px 0px
+}
+
+#spotAdd {
+	font-size: 20px;
+	margin: 0px 0px 15px 0px;
+}
+
+#spotDesc {
+	font-size: 15px;
+	padding: 0px 5px 0px 0px;
+}
+
+#spotPic {
+	max-width: 200px;
+	max-height: 200px;
+	display: block;
+	margin: 0 auto;
+	margin: 0px 0px 10px 0px
+}
+
+#spotThumbs {
+	display: block;
+	margin: 0 auto;
+	max-height: 100px;
+	max-width: 100px;
+}
+
+#aboutBanner {
+	display: block;
+	margin: 20px auto;
+	max-width: 280px;
+}
+
+.aboutText {
+	font-family: 'Quicksand', sans-serif;
+	text-align: justified;
+	margin: auto 20px;
+	font-size: 13px;
+}
+
+.aboutMission {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 20px;
+	font-weight: 800;
+	text-align: center;
+}
+
+.teamPics {
+	max-height: 100px;
+	max-width: 100px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: #f28383;
+	border-radius: 10px;
+	margin: 10px 15px 10px 15px;	
+}
+
+ion-scroll[direction=y] {
+  // height: calc(100vh - 33px - 33px - 90px - 15px);
+  height: 100vh;
 }
 
 

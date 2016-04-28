@@ -1,23 +1,29 @@
+<ng-include src="'templates/navbar.html'"></ng-include>
+
 <ion-view>
-  <ion-content>
+  <ion-content class="has-header">
 
 		<!-- INPUT FORM W/ BUTTON -->
-		<div>
+		<div class="list list-inset">
 			<form ng-submit="submit(address)">
-        Enter Start Address:
-        <input type="text" ng-model="address" placeholder="type address" id="address"/>
-        <input type="submit" id="homeStartAddy" value="Start Here" />
+        <div class="homeText">My starting point is:</div>
+        <label class="item item-input">
+          <input type="text" ng-model="address" placeholder="Input Starting Address..." id="address"/>
+        </label>
+        <!-- <label class="item item-input"> -->
+          <button type="submit" id="homeStartAddy" value="Start Here" class="button button-block button-positive">Continue</button>
+        <!-- </label> -->
       </form>
 		</div>
 
 		<!-- CURRENT LOCATION BUTTON -->
-    <p>
-      - OR -
-    </p>
-
-    <button ng-controller="MapCtrl" class="button button-full button-positive" ng-click="getUserLoc()">
-      Use Current Location
+    <div class="homeText">OR</div>
+    
+    <div class="list list-inset">
+    <button ng-controller="MapCtrl" class="button button-block button-positive" ng-click="getUserLoc()">
+      <strong>Use Current Location</strong>
     </button>
+    </div>
 
     <!-- <div ng-controller="HomeCtrl">
       <button ng-click="currentLoc()" id="currentLoc" value="Use Current Location" />
@@ -25,3 +31,12 @@
 
   </ion-content>
 </ion-view>
+
+<!-- <div class="list list-inset">
+  <label class="item item-input">
+    <input type="text" placeholder="First Name">
+  </label>
+  <label class="item item-input">
+    <input type="text" placeholder="Last Name">
+  </label>
+</div -->

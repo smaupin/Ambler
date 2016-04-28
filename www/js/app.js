@@ -65,7 +65,7 @@ angular.module('ambler', ['ionic']) //'ngCordova'
   .state('about', {
     url: '/about',
     templateUrl: 'templates/about.html',
-    // controller: 'HomeCtrl'
+    controller: 'HomeCtrl'
   });
 
 
