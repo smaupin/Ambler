@@ -5,12 +5,12 @@
 		<!-- LOCATION TITLE SHOULD GO HERE -->
 		<div id="spotName" class="spotText">{{ spot.name }}</div>
 		<div id="spotAdd" class="spotText">{{ spot.address }}</div>
-		<div><img id="spotPic" class="imgLoc" ng-src="{{ spot.picURL }}"></div>
-			<span>img2</span>
-			<span>img3</span>
-			<span>img4</span>
+		<div id="mainImg"><img id="spotPic" ng-src="{{ spot.picURL }}"></div>
+			<span><img class="spotThumbs" ng-src="{{ spot.imgOne }}"></span>
+			<span><img class="spotThumbs" ng-src="{{ spot.imgTwo }}"></span>
+			<span><img class="spotThumbs" ng-src="{{ spot.imgThree }}"></span>
 		</div>
-		<div id="spotDesc" class="spotText">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+		<div id="spotDesc" class="spotText">{{ spot.description }}</div>
 		<div class="spotThumbs">
   </ion-content>
 </ion-view>

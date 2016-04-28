@@ -31,13 +31,14 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 #splash {
-	background: url("/img/sutro-ambler-beautiful.png") no-repeat center;
+	// background: url("/img/sutro-ambler-beautiful.png") no-repeat center;
+	background: url("http://i.imgur.com/PIPsmnf.png") no-repeat center;
 }
 
 #startBtn {
 	margin-top: 460px;
 	font-size: 24px;
-	padding: auto 30px auto 30px;
+	padding: auto 20px auto 20px;
 	background-color: #f28383;
 	font-family: 'Quicksand', sans-serif;
 	font-weight: 500;
@@ -98,6 +99,14 @@ form.ng-pristine.ng-valid {
 	font-family: 'Quicksand', sans-serif;
 	font-size: 20px;
 	font-weight: 900;
+}
+
+#selectionText {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 20px;
+	font-weight: 900;
+	text-align: center;
+	margin: 15px auto;
 }
 
 .card .item, .list-inset .item, .padding > .list .item, .padding-horizontal > .list .item {
@@ -208,16 +217,17 @@ form.ng-pristine.ng-valid {
 #spotPic {
 	max-width: 200px;
 	max-height: 200px;
-	display: block;
-	margin: 0 auto;
-	margin: 0px 0px 10px 0px
+	// display: block;
+	// margin-left: 50px;
+	margin: 10px 0px 15px 85px;
+	border-radius: 10px;
 }
 
-#spotThumbs {
-	display: block;
-	margin: 0 auto;
+.spotThumbs {
 	max-height: 100px;
 	max-width: 100px;
+	border-radius: 5px;
+	margin: 0px 0px 10px 17px;
 }
 
 #aboutBanner {
@@ -247,11 +257,10 @@ form.ng-pristine.ng-valid {
 	border-width: 3px;
 	border-color: #f28383;
 	border-radius: 10px;
-	margin: 10px 15px 10px 15px;	
+	margin: 10px 10px 10px 10px;
 }
 
 ion-scroll[direction=y] {
-  // height: calc(100vh - 33px - 33px - 90px - 15px);
   height: 100vh;
 }
 
