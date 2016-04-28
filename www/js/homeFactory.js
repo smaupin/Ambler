@@ -13,5 +13,13 @@ function homeService() {
 
   };//closes factory.catchLocation
 
+	factory.hold = [];
+
+	factory.sendChosen = function(e) {
+		console.log("e should be CHOSEN, and it is " + e);
+		factory.hold.push(e);
+		console.log("factory.hold = " + factory.hold);
+	}
+
 	return factory;
 }//closes function homeService

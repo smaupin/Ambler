@@ -58,13 +58,13 @@ angular.module('ambler')
 .controller('CheckCtrl', function($scope, $state, dataService, homeService, $ionicSideMenuDelegate) {
   $scope.locations = dataService.locations;
   // $scope.spot = {};
-  $scope.$back = function() { 
+  $scope.$back = function() {
     window.history.back();
   };
   // console.log($scope.locations);
 
   $scope.goAmble = function() {
-    // $state.go('map');
+    $state.go('map');
     console.log($scope.chosen);
   };
 
@@ -81,7 +81,7 @@ angular.module('ambler')
   for (i=0; i < closest.length; i++) {
     shortList = $scope.locations[[closest[i][0]]-1];
     spots.push(shortList);
-  } 
+  }
   $scope.spots = spots; //THIS IS OUR ARRAY 5 CLOSEST POINTS
 
   $scope.chosen = [];
@@ -101,6 +101,9 @@ angular.module('ambler')
       $scope.chosen.push(spot);
       console.log(spot.name + " has been pushed into chosen");
     }
+
+    homeService.sendChosen($scope.chosen);
+
   };
 
 
@@ -157,7 +160,7 @@ angular.module('ambler')
   $scope.locations = dataService.locations;
   // console.log($scope.locations);
 
-  $scope.$back = function() { 
+  $scope.$back = function() {
     window.history.back();
   };
 
@@ -236,12 +239,25 @@ angular.module('ambler')
   }//CLOSES initMap
 
   function calcAndDisplayRoute(directionsDisplay, directionsService, wayPoints, map) {
-    var start = userLoc, //ideally geolocation or search field
-        end = new google.maps.LatLng(37.795800, -122.393459); //ideally last point in wayPoints array
-        wayPoints = [{location: {"lat": 37.796997, "lng": -122.400033}, stopover: true},
-                     {location: {"lat": 37.794097, "lng": -122.404925}, stopover: true},
-                     // {location: {"lat": 37.783115, "lng": -122.389071}, stopover: true},
-                     {location: {"lat": 37.794920, "lng": -122.397313}, stopover: true}];
+
+    // vvvvvv commented out lines are for the end and start being identical -- making it a loop vvv
+    var start = new google.maps.LatLng(homeService.list[0][0], homeService.list[0][1]),
+        end = new google.maps.LatLng(homeService.list[0][0], homeService.list[0][1]), // same as start - loop.
+        wayPoints = [];
+
+    // var start = new google.maps.LatLng(homeService.list[0][0], homeService.list[0][1]),
+    //     // end = new google.maps.LatLng(37.795800, -122.393459), //ideally last point in wayPoints array
+    //     end = new google.maps.LatLng(homeService.hold[homeService.hold.length-1][0], homeService.hold[homeService.hold.length-1][1]), //ideally last point in wayPoints array
+    //     wayPoints = [];
+
+        // console.log("calcAndDisplayRoute thinks userLoc is " + userLoc);
+        // console.log("calcAndDisplayRoute thinks coordinates is " + coordinates);
+
+
+        for (i=0; i<homeService.hold[0].length; i+=1) {
+          // console.log(chosen[i].lat, chosen[i].lng + "lat and lng");
+          wayPoints.push({location: {"lat": homeService.hold[0][i].lat, "lng": homeService.hold[0][i].lng}, stopover: true});
+        }
 
     var request = {
       origin: start,
