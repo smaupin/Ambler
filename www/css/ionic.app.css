@@ -9739,10 +9739,53 @@ a.button {
   height: 100%; }
 
 #splash {
-  background: url("/img/SPLASH with LOGO.png") no-repeat center; }
+  background: url("/img/sutro-ambler-beautiful.png") no-repeat center; }
 
 #startBtn {
-  margin-top: 350px; }
+  margin-top: 460px;
+  font-size: 24px;
+  padding: auto 30px auto 30px;
+  background-color: #f28383;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500; }
+
+.bar-stable.bar.bar-header {
+  background-color: #f28383; }
+
+.bar.bar-stable .title {
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 900; }
+
+.button.button.ion-ios-information-outline {
+  background-color: #f28383;
+  font-size: 30px;
+  color: white; }
+
+a.button.icon-left.ion-chevron-left.button-clear.button-dark {
+  color: white; }
+
+form.ng-pristine.ng-valid {
+  margin-top: 90px; }
+
+.homeText {
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  font-weight: 900;
+  font-size: 20px;
+  margin: 40px auto 40px auto; }
+
+#homeStartAddy {
+  background-color: #f28383;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px;
+  font-weight: 900; }
+
+.button.button.button-block.button-positive {
+  background-color: #f28383;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px;
+  font-weight: 900; }
 
 .imgLoc {
   max-height: 135px;
@@ -9752,6 +9795,13 @@ a.button {
 .item-text-wrap.row.item {
   padding-top: 5px;
   padding-bottom: 0px; }
+
+.checkbox-positive input:before, .checkbox-positive .checkbox-icon:before {
+  border-color: #f28383; }
+
+.checkbox-positive input:checked:before, .checkbox-positive input:checked + .checkbox-icon:before {
+  background-color: #f28383;
+  border-color: #f28383; }
 
 .checkbox-positive.item.item-checkbox {
   position: relative;
@@ -9771,11 +9821,43 @@ a.button {
   left: 0px;
   top: 20px; }
 
+.item-content.disable-pointer-events {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px; }
+
 .blurb {
-  font-size: 12px; }
+  font-size: 12px;
+  font-family: 'Quicksand', sans-serif; }
 
 .button.button-clear.button-positive {
+  font-family: 'Quicksand', sans-serif;
   border: none;
   padding: 0px;
   font-size: 14px;
-  float: right; }
+  float: right;
+  color: #f28383; }
+
+.bar.bar-footer.bar-positive {
+  background-color: #f28383; }
+
+#goAmble {
+  background-color: #f28383;
+  font-size: 25px; }
+
+.spotText {
+  font-family: 'Quicksand', sans-serif;
+  text-align: center; }
+
+#spotTitle {
+  font-size: 20px; }
+
+#spotDesc {
+  font-size: 15px; }
+
+#spotPic {
+  max-width: 200px;
+  max-height: 200px; }
+
+.team {
+  max-height: 50px;
+  max-width: 50px; }

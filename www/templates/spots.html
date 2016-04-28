@@ -15,7 +15,7 @@
           <div class="col col-40"><img class="imgLoc" ng-src="{{ spot.picURL }}"></div>
           <div class="col col-45">
             <!-- <div class="row"> -->
-            <a ng-click="seeSpot(spot)">{{ spot.name }}</a><!-- {{ spot.name }} -->
+            <!-- <a ng-click="seeSpot(spot)">{{ spot.name }}</a> -->
             <!-- <ion-checkbox class="checkbox-positive">{{ spot.name }}</ion-checkbox> -->
             <!-- </div> -->
             <div class="blurb row">
@@ -24,9 +24,9 @@
             <!-- <button class="button button-clear button-positive" ng-click="seeSpot()">
               Read More...
             </button> -->
-            <!-- <a class="button button-clear button-positive" ng-click="seeSpot()">
+            <a class="button button-clear button-positive" ng-click="seeSpot(spot)">
               Read More...
-            </a> -->
+            </a>
           </div> <!-- .col-45 -->
         </ion-item>
       </ion-list>

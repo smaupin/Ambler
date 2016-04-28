@@ -14,8 +14,9 @@
             <!-- </div> -->
             <div class="blurb row">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              {{  }}
             </div>
-            <button class="button button-clear button-positive" ng-click="seeSpot()">
+            <button class="button button-clear button-positive" ng-click="seeSpot(spot)">
               Read More...
             </button>
           </div> <!-- .col-45 -->
@@ -27,7 +28,7 @@
     <!-- <button class="button button-clear button-light">Amble</button> -->
     <div class="button-bar">
       <!-- <a class="button">First</a> -->
-      <a class="button" ng-click="goAmble()">Amble</a>
+      <a id="goAmble" class="button" ng-click="goAmble()">Amble</a>
       <!-- <a class="button">Third</a> -->
     </div>
   </div>

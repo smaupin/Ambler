@@ -8,6 +8,15 @@ angular.module('ambler')
 
 .controller('HomeCtrl', function($scope, $state, dataService, homeService, $ionicSideMenuDelegate) {
   $scope.locations = dataService.locations;
+  $scope.restart = function () {
+    $state.go('home');
+  };
+  $scope.about = function () {
+    $state.go('about');
+  };
+  $scope.$back = function() {
+    window.history.back();
+  };
   // input and autocomplete used to search address in google maps
   var input = document.getElementById('address');
   var coordinates;
@@ -15,7 +24,7 @@ angular.module('ambler')
   startAdd = new google.maps.places.Autocomplete(input);
   // google.maps.event.addDomListener(window, "load", initMap);
   $scope.submit = function() {
-    if (startAdd.gm_bindings_.types["7"].Rd.T.length > 0) { // this just makes sure they typed *something*
+    if (startAdd) { // this just makes sure they typed *something*
 
       // use address
       // console.log("startAdd = " + startAdd);
@@ -23,7 +32,7 @@ angular.module('ambler')
 
       // when the dot/bracket notation above gives us 'formatted address' save it as a variable
       // startPoint = "225 Bush St, San Francisco, CA 94104, USA"; // for the time being, this is hardcoded, instead of the code from the console log.
-      startPoint = startAdd.gm_bindings_.types["7"].Rd['gm_bindings_'].place["4"].Rd.input; // sets startPoint as the address String.
+      startPoint = startAdd.gm_bindings_.types["7"].Od['gm_bindings_'].place["4"].Od.input; // sets startPoint as the address String.
       // console.log("startPoint = " + startPoint); // works
     }
     else {
@@ -58,6 +67,9 @@ angular.module('ambler')
 .controller('CheckCtrl', function($scope, $state, dataService, homeService, $ionicSideMenuDelegate) {
   $scope.locations = dataService.locations;
   // $scope.spot = {};
+  $scope.about = function () {
+    $state.go('about');
+  };
   $scope.$back = function() {
     window.history.back();
   };
@@ -154,7 +166,12 @@ angular.module('ambler')
   // $state.go("check")
   $scope.locations = dataService.locations;
   // console.log($scope.locations);
-
+  $scope.about = function () {
+    $state.go('about');
+  };
+  $scope.restart = function () {
+    $state.go('home');
+  };
   $scope.$back = function() {
     window.history.back();
   };

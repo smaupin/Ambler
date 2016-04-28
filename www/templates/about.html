@@ -1,12 +1,32 @@
+<ion-header-bar class="bar-stable">
+    <div>
+        <a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="$back()">Back</a>
+        <h1 class="title">Ambler</h1>
+        <button class="button ion-ios-location-outline" ng-click="restart()"></button>
+      <!-- <button class="button icon ion-navicon"></button> -->
+  </div>
+</ion-header-bar>
+
 <ion-view>
   <ion-content>
-    <ng-include src="'templates/navbar.html'"></ng-include>
+    <!-- <ng-include src="'templates/navbar.html'"></ng-include> -->
     <div>Ambler</div><br>
     <div>Our Mission</div><br>
     <div>We are in a seeming state of perpetual motion with work and other commitments. We live in one of the most beautiful cities in the world, yet we rarely pause to relish in it let alone explore its splendor.</div><br>
     <div>Ambler wants you to take some time to reconnect with yourself, friends or loved ones and this spectacular city. </div><br>
     <div>We take the guess work out of what to see.  You will be offered 5 spots within your area, geared toward your preferences.</div><br>
     <div>Walking is good for your body, mind and soul.  So take a moment and use Ambler to discover the beauty of San Francisco on foot.</div><br>
-    <div>Meet the Team</div>
+    <div>The Ambler Team</div>
+    <div class="row">
+        <span><img class="team" src="/img/stacy.jpg" alt=""></span>
+        <span><img class="team" src="/img/alex.jpg" alt=""></span>
+        <span><img class="team" src="/img/elsa.jpg" alt=""></span>
+    </div>
+    <div class="row">
+        <span><img class="team" src="/img/huli.jpg" alt=""></span>
+        <span><img class="team" src="/img/noel.jpg" alt=""></span>
+        <span><img class="team" src="/img/scot.jpg" alt=""></span>
+    </div>
+    <div>With Love from San Francisco!</div>
   </ion-content>
 </ion-view>

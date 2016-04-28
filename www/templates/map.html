@@ -1,11 +1,12 @@
 <ion-header-bar class="bar-stable">
 	<div>
+		<button class="button ion-ios-location-outline" ng-click="restart()"></button>
 	  <h1 class="title">Ambler</h1>
-	  <button class="button icon ion-navicon"></button>
+		<button class="button ion-ios-information-outline" ng-click="about()"></button>
   </div>
 </ion-header-bar>
 <ion-view>
-  <ion-content class="has-header">
+  <ion-content class="has-header has-footer">
     <div id="map" data-tap-disabled="true"></div>
 
 		<!-- CREATE SEPARATE DIV FOR LIST VIEW TO TOGGLE BETWEEN (IF TIME AVAILABLE) -->
