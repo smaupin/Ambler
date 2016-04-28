@@ -21,5 +21,15 @@ function homeService() {
 		console.log("factory.hold = " + factory.hold);
 	}
 
+	factory.display = [];
+
+	factory.sendSpot = function(e) {
+		console.log("e should be SPOT, and it is " + e);
+		factory.display.push(e);
+		console.log("factory.display = " + factory.display);
+		console.log("factory.disolay name = " + factory.display[0].name);
+	}
+
+
 	return factory;
 }//closes function homeService
