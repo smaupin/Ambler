@@ -24,7 +24,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .scroll {
     height: 100%;
 }
- 
+
 #map {
     width: 100%;
     height: 100%;
@@ -42,6 +42,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 	background-color: #f28383;
 	font-family: 'Quicksand', sans-serif;
 	font-weight: 500;
+  max-width: 250px;
 }
 
 .bar-stable.bar.bar-header {
@@ -263,14 +264,3 @@ form.ng-pristine.ng-valid {
 ion-scroll[direction=y] {
   height: 100vh;
 }
-
-
-
-
-
-
-
-
-
-
-
